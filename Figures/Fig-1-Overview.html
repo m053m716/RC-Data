@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Figure 1: Experimental Overview</title>
+    <script type="text/javascript" src="https://public.tableau.com/javascripts/api/tableau-2.min.js"></script>
+    <script type="text/javascript">
+        function initViz() {
+            var containerDiv = document.getElementById("Figure_1_container"),
+                url = "https://public.tableau.com/views/RC-Project/Fig_1-Overview",
+                options = {
+                    hideTabs: true,
+                    device: "desktop",
+                    onFirstInteractive: function () {
+                        console.log("Run this code when the viz has finished loading.");
+                    }
+                };
+
+            // Create a viz object and embed it in the container div.
+            var viz = new tableau.Viz(containerDiv, url, options); 
+        }
+    </script>
+</head>
+
+<body onload="initViz();">
+    <div id="Figure_1_container"; style="margin-left: 25px; margin-top: 5px; width: 700px; height: 850px; background-color: white; border: thin solid black; padding:10px 10px 10px 10px;"></div>    
+    <div id="Figure_1_caption"; style="margin-left: 25px; width: 700px; text-align: left; background-color: #cccccc; border: thin solid black; padding:10px 10px 10px 10px;">
+        <h2><strong><span style="font-family: Arial, Helvetica, sans-serif;">Figure 1. Electrode placement and recording schedule.</span></strong><span style="font-family: Arial, Helvetica, sans-serif;">&nbsp;<br></span></h2>
+        <p><span style="font-family: Arial, Helvetica, sans-serif;"><em>Top:</em> Timeline of experiments. Each column represents a day relative to the electrode implant operation. Each grouping shows counts of alignment events for an individual exemplar animal by group. The exemplar animal from each group can be changed by selecting the entry from the dropdown box below. From top to bottom, events are coded as <strong>Reach Start</strong> (grey); <strong>Grasp</strong> (blue); <strong>Support Movement</strong> (red); or <strong>Reach Complete</strong> (green). Counts can be broken down by Successful, Unsuccessful, or both by ticking the corresponding checkboxes below.&nbsp;</span></p>
+        <p><span style="font-family: Arial, Helvetica, sans-serif;"><em>Left:</em> Layout of electrode channels corresponding to the selected animal. Electrodes were targeted to Caudal Forelimb Area (CFA; M1 homolog) ipsilateral to the preferred reaching forelimb, and contralateral Rostral Forelimb Area (RFA; PM homolog) using a combination of stereotaxic coordinates and intracortical microstimulation mapping (ICMS). Stimulation protocol for mapping consisted of 13-pulses delivered at 300-Hz with a biphasic pulse duration of 200-ms with a maximum current intensity of 80-&mu;A verified using an oscilloscope; movements were observed by two experimenters and confirmed by both in order to be counted. <br></span></p>
+        <p><span style="font-family: Arial, Helvetica, sans-serif;"><em>Right:&nbsp;</em>Filters and summary of average electrode stereotaxic location for microwire implants in each animal, based on average shank position.&nbsp;Different shapes correspond to the movement that was evoked; displayed channels for different movement representations can be shown by ticking the corresponding <strong>ICMS Movement</strong> checkboxes.</span></p>
+    </div>
+</body>
+
+</html>
