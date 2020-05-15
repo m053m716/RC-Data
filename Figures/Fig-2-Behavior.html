@@ -2,17 +2,39 @@
 <html>
 
 <head>
-    <title>Figure 2: Trial duration decreases with time</title>
+    <title>Figure 2: Behavior</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Trial durations decrease with time">
+    <meta name="keywords" content="RC, Rat Reaching, Rehabilitation, Preclinical Studies, Behavioral Recovery, Motor Cortex, Figure 2">
+    <meta name="author" content="Max Murphy">
+    <!-- Bootstrap Layout css -->
+    <link rel="stylesheet"; href="../bootstrap/3.4.1/css/bootstrap.min.css">
+    <!-- Custom Style css -->
+    <link rel="stylesheet"; href="../styles/main_fonts.css">
+    <link rel="stylesheet"; href="../styles/embedded_styles.css">
+    <!-- Bootstrap Layout js -->
+    <script src="../libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="../bootstrap/3.4.1/js/bootstrap.min.js"></script> 
+    <!-- Tableau js -->
+    <script type="text/javascript" src="https://public.tableau.com/javascripts/api/tableau-2.min.js"></script>
+    <script type="text/javascript">
+        function initViz() {
+            var containerDiv = document.getElementById("fig_2"),
+            url = "https://public.tableau.com/views/RC-Project/Fig_2-Behavior",
+            options = {
+                height: 750,
+                width: 1400,
+                device: 'desktop',
+                hideTabs: true
+            };
+            // Create a viz object and embed it in the container div.
+            var viz = new tableau.Viz(containerDiv, url, options); 
+        }
+    </script>
 </head>
 
-<body>
-    <iframe id="Figure_2_container"; name="Figure 2"; style="margin-left: 25px; width: 650px; height: 400px; background-color: white; border: thin solid black; padding:10px 10px 10px 10px;"; scrolling="no"; src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQGeyFfCZP60lAG-JULX62PMIkznWBXIwi1ZaFANvz5lhauQzkDuqyvG4UBobiXuJ7GAmWhgDCmv5c2/pubchart?oid=873162670&amp;"; format=interactive;></iframe>  
-    <div id="Figure_2_caption" style="margin-left: 25px; width: 650px; text-align: left; background-color: #cccccc; border: thin solid black; padding:10px 10px 10px 10px;">
-    <h2><strong><span style="font-family: Arial, Helvetica, sans-serif;">Figure 2. Trial duration decreases with post-operative day.</span></strong></h2>
-    <p><span style="font-family: Arial, Helvetica, sans-serif;">Rats with focal ischemia in CFA demonstrated a significant <em>reduction&nbsp;</em>in trial duration as an effect of post-operative day. This was true for both <em>successful</em> and <em>unsuccessful</em> retrieval attempts. By contrast, this effect was not seen for either type of retrieval in intact rats.</span></p>
-</div>
-</div>
-</div>
+<body class="embedded"; onload="initViz();">
+    <div id="fig_2"></div>
 </body>
 
 </html>

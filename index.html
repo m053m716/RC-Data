@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <title> RC-Project </title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Data Visualization">
+    <meta name="keywords" content="RC, Rat Reaching, Rehabilitation, Preclinical Studies, Neurophysiology, Motor Cortex">
+    <meta name="author" content="Max Murphy">
+    <!-- Bootstrap Layout css -->
+    <link rel="stylesheet"; href="bootstrap/3.4.1/css/bootstrap.min.css">
+    <!-- Custom Style css -->
+    <link rel="stylesheet"; href="styles/main_styles.css">
+    <link rel="stylesheet"; href="styles/main_fonts.css">
+    <link rel="stylesheet"; href="styles/main_header_menu.css">
+    <link rel="stylesheet"; href="styles/main_container.css">
+    <link rel="stylesheet"; href="styles/main_sub_menu.css">
+    <!-- Bootstrap Layout js -->
+    <script src="libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+    
+<body class="main">
+    <div class="container container-fluid container-fluid-body"> 
+        <div class="row row-nav">
+            <!-- Add "floating" header that is always there -->
+            <div class="headerbanner"; id="offset">
+                <h2>RC Project</h2>
+                <p class="subtitle"; id="subheader">
+                    Data visualization for neural dynamics during rehabilitation.
+                </p>
+                <!-- Navigation: Pills -->
+                <ul class="nav nav-pills nav-justified nav-pills-frozen"; id="section_pills">
+                    <li><a data-toggle="pill" href="#abstract">Abstract</a></li>
+                    <li class="active"><a data-toggle="pill" href="#data">Data</a></li>
+                    <li><a data-toggle="pill" href="#discussion">Discussion</a></li>
+                    <li><a data-toggle="pill" href="#methods">Methods</a></li>
+                </ul>  
+            </div>
+        </div>
+        <div class="row row-main"; id="body_row">
+            <div class="container container-fluid container-fluid-main"; id="body_grid_container">              
+                <!-- "Main" Navigation Tabs: Contents -->
+                <div class="tab tab-content tab-content-main"; id="section_display">
+                    
+                    <!-- Abstract -->
+                    <div class="tab tab-pane tab-pane-main fade"; id="abstract">
+                        <h3>Abstract</h3>
+                        <p><em>Abstract goes here</em></p>
+                    </div>
+                    <!-- Data: Results/Figures -->
+                    <div class="tab tab-pane tab-pane-main fade in active"; id="data">
+                        <div class="panel-data"; id="data_layout">
+                            <!-- Results/Stats -->
+                            <h3>Results</h3>
+                            <p><em>Results go here</em></p>
+                            <!-- Figures: Tabbed -->
+                            <h3>Figures</h3>
+                            <iframe class="storyframe"; name="fig_1_display"; src="Figures/Storyboard.html"; id="storyboard_iframe"></iframe>
+                        </div>
+                    </div>
+                    <!-- Discussion -->
+                    <div class="tab-pane tab-pane-main fade"; id="discussion";>
+                        <h3>Discussion</h3>
+                        <p><em>Discussion goes here</em></p>
+                    </div>
+                    <!-- Methods -->
+                    <div class="tab-pane tab-pane-main fade"; id="methods";>
+                        <h3>Methods</h3>
+                        <p><em>Methods go here</em></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

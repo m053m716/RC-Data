@@ -2,11 +2,11 @@
 <html>
 
 <head>
-    <title>Figure 1: Experimental Overview</title>
-    <meta name="viewport"; content="width=device-width, initial-scale=1">
-    <meta name="description"; content="Electrode placement and recording schedule">
-    <meta name="keywords"; content="RC, Rat Reaching, Rehabilitation, Preclinical Studies, ICMS, Motor Cortex, Figure 1">
-    <meta name="author"; content="Max Murphy">
+    <title>Figure 3: Spike Rate</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Neurophysiological activity with reference to behaviors of interest">
+    <meta name="keywords" content="RC, Rat Reaching, Rehabilitation, Preclinical Studies, Spike Rates, Population Dynamics, Motor Cortex, Figure 3">
+    <meta name="author" content="Max Murphy">
     <!-- Bootstrap Layout css -->
     <link rel="stylesheet"; href="../bootstrap/3.4.1/css/bootstrap.min.css">
     <!-- Custom Style css -->
@@ -16,18 +16,17 @@
     <script src="../libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="../bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <!-- Tableau js -->
-    <script type="text/javascript"; src="https://public.tableau.com/javascripts/api/tableau-2.min.js"></script>
+    <script type="text/javascript" src="https://public.tableau.com/javascripts/api/tableau-2.min.js"></script>
     <script type="text/javascript">
         function initViz() {
-            var containerDiv = document.getElementById("fig_1"),
-            url = "https://public.tableau.com/views/RC-Project/Fig_1-Overview",
+            var containerDiv = document.getElementById("fig_3"),
+            url = "https://public.tableau.com/views/RC-Project/Fig_3-SpikeRateChannelBreakout",
             options = {
                 height: 750,
                 width: 1400,
                 device: 'desktop',
                 hideTabs: true
             };
-
             // Create a viz object and embed it in the container div.
             var viz = new tableau.Viz(containerDiv, url, options); 
         }
@@ -35,6 +34,6 @@
 </head>
 
 <body class="embedded"; onload="initViz();">
-    <div id="fig_1"></div>    
+    <div id="fig_3"></div>
 </body>
 </html>
