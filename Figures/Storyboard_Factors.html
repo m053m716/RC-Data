@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Storyboard: Figures</title>
+    <meta name="viewport"; content="width=device-width, initial-scale=1">
+    <meta name="description"; content="Electrode placement and recording schedule">
+    <meta name="keywords"; content="RC, Rat Reaching, Rehabilitation, Preclinical Studies, ICMS, Motor Cortex, Storyboard, Factor Analysis">
+    <meta name="author"; content="Max Murphy">
+    <!-- Bootstrap Layout css -->
+    <link rel="stylesheet"; href="../bootstrap/3.4.1/css/bootstrap.min.css">
+    <!-- Custom Style css -->
+    <link rel="stylesheet"; href="../styles/main_fonts.css">
+    <link rel="stylesheet"; href="../styles/embedded_styles.css">
+    <!-- Bootstrap Layout js -->
+    <script src="../libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="../bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <!-- Tableau js -->
+    <script type="text/javascript"; src="https://public.tableau.com/javascripts/api/tableau-2.min.js"></script>
+    <script type="text/javascript">
+        function initViz() {
+            var containerDiv = document.getElementById("storyboard"),
+            url = "https://public.tableau.com/views/RC_Factor-Analysis/FactorAnalysis",
+            options = {
+                height: 900,
+                width: 1400,
+                device: 'desktop',
+                hideTabs: true
+            };
+
+            // Create a viz object and embed it in the container div.
+            var viz = new tableau.Viz(containerDiv, url, options); 
+        }
+    </script>
+</head>
+
+<body class="embedded"; onload="initViz();">
+    <div id="storyboard"; name="figures"; style="padding:0px;border-style:none;width:100%;height:100%"></div>    
+</body>
+</html>
