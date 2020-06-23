@@ -52,3 +52,10 @@ p {
     text-overflow:ellipsis;
     flex-wrap:wrap;
 }
+
+p.abstract {
+    font-size: 15px;
+    padding: 5px 35px 35px 35px;
+    max-width: 650px;
+    max-height: 650px;
+}
