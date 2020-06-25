@@ -15,7 +15,7 @@ div.container.container-fluid.container-fluid-main {
     width: 100%;
     border-style: none;
     background-color: transparent;
-    overflow-x: hidden;
+    overflow-x: auto;
     overflow-y: hidden;
 }
 

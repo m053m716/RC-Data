@@ -1,0 +1,3 @@
+**Animals**
+
+Ten adult, male Long-Evans rats (weight = 312 – 353 grams, Harlan Laboratories, Inc., Indianapolis, IN) were acquired at three months of age. Rats were singly housed and provided food and water. The room was kept on a 12-h:12-h light/dark cycle, and ambient temperature was maintained at 22 °C. Protocols for animal use were approved by the Kansas University Medical Center Institutional Animal Care and Use Committee and complied with the *Guide for the Care and Use of Laboratory Animals (Eighth Edition, The National Academies Press, 2011).* Rats (n=10) were assigned randomly to one of three groups: Intact group (n=4), or Ischemia group (n=6).

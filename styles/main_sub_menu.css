@@ -101,7 +101,7 @@ iframe.storyframe {
 iframe.methodsframe {
     border-style: none;
     height: 700px;
-    min-width: 1500px;
+    width: 100%;
     background-color: inherit;
     overflow-x: auto;
     overflow-y: auto;
