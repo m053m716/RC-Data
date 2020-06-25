@@ -1,6 +1,6 @@
 /* Start at top of style hierarchy */
 html {
-    min-height: 900px;
+    height: 950px;
     min-width: 1500px;
     overflow-x: hidden;
     overflow-y: auto;

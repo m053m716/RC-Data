@@ -13,7 +13,7 @@
     <link rel="stylesheet"; href="styles/main_styles.css">
     <link rel="stylesheet"; href="styles/main_fonts.css">
     <link rel="stylesheet"; href="styles/main_header_menu.css">
-    <link rel="stylesheet"; href="styles/main_container.css">
+    <link rel="stylesheet"; href="styles/main_containers.css">
     <link rel="stylesheet"; href="styles/main_sub_menu.css">
     <!-- Bootstrap Layout js -->
     <script src="libs/jquery/3.4.1/jquery.min.js"></script>
@@ -21,29 +21,65 @@
 </head>
     
 <body class="main">
-    <div class="container container-fluid container-fluid-body"> 
-        <div class="row row-nav">
-            <!-- Add "floating" header that is always there -->
-            <div class="headerbanner"; id="offset">
-                <h2>*Task-Related Neural Activity Following Primary Motor Cortical Ischemia in Rats</h2>
-                <p class="subtitle"; id="subheader">
-                    Andrea Pack**, Max Murphy**, Scott Barbay, Randolph Nudo, & David Guggenmos
-                </p>
-                <p>
-                    * Contents are still a work-in-progress. 
-                </p>
-                <p>
-                    **Equal first-author contribution.
-                </p>
-                <!-- Navigation: Pills -->
-                <ul class="nav nav-pills nav-justified nav-pills-frozen"; id="section_pills">
-                    <li class="active"><a data-toggle="pill"; href="#abstract"; id="abstract_pill">Abstract</a></li>
-                    <li><a data-toggle="pill"; href="#data"; id="data_pill">Data</a></li>
-                    <li><a data-toggle="pill"; href="#discussion"; id="discussion_pill">Discussion</a></li>
-                    <li><a data-toggle="pill"; href="#methods"; id="methods_pill">Methods</a></li>
-                </ul>  
+    <!-- Add "floating" header/navbar that is always there, but on small screens, collapses -->
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button"; class="navbar-toggle"; data-toggle="collapse"; data-target="#section_navbar">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand"; href="#">RC-Project</a>
             </div>
         </div>
+        
+        <!-- Define collapsible navbar here -->
+        <div class="collapse navbar-collapse"; id="section_navbar">
+            <ul class="nav navbar-nav">
+                <li class="active"><a data-toggle="tab"; data-target="#abstract">Abstract</a></li>
+                <li class="dropdown"><a class="dropdown-toggle"; data-toggle="dropdown"; href="#">Data<span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a data-toggle="tab"; data-target="#data_results">Results</a></li>
+                        <li><a data-toggle="tab"; data-target="#data_figures">Figures</a></li>
+                    </ul>
+                </li>
+                <li><a data-toggle="tab"; data-target="#discussion">Discussion</a></li>
+                <li><a data-toggle="tab"; data-target="#methods">Methods</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="#authorsModal"; data-toggle="modal">Authors</a></li>
+                <li><a href="mailto:max.murphy11@gmail.com"><span class="glyphicon glyphicon-envelope"></span></a></li>
+            </ul>
+            
+            <!-- Define modal dialog box with austor info -->
+            <div class="modal fade"; role="dialog"; id="authorsModal">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button"; class="close"; data-dismiss="modal">&times;</button>
+                            <h3 class="modal-title">About</h3>
+                        </div>
+                        <div class="modal-body">
+                            <h4>Working Title</h4>
+                            <p>*Task-Related Neural Activity Following Primary Motor Cortical Ischemia in Rats</p>
+                            <h4>Authors</h4>
+                            <p>Andrea Pack**, Max Murphy**, Scott Barbay, Randolph Nudo, & David Guggenmos</p>
+                            <h4>Notes</h4>
+                            <p>*Work-in-progress</p>
+                            <p>**Equal first-author contribution</p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button"; class="btn btn-default"; data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>        
+    </nav>
+    
+    <!-- main body contents below -->
+    <div class="container container-fluid container-fluid-body"> 
         <div class="row row-main"; id="body_row">
             <div class="container container-fluid container-fluid-main"; id="body_grid_container">              
                 <!-- "Main" Navigation Tabs: Contents -->
@@ -70,77 +106,81 @@
                             </p>
                         </p> 
                     </div>
-                    <!-- Data: Results/Figures -->
-                    <div class="tab tab-pane tab-pane-main fade"; id="data">
-                        <div class="panel-data"; id="data_layout">
-                            <!-- Results/Stats -->
-                            <h3>Results</h3>
-                            <div class="panel-group"; id="r_behavior">
-                                <div class="panel panel-default">
-                                    <div class="panel-heading">
-                                        <h4 class="panel-title">
-                                            <a data-toggle="collapse" data-parent="#accordion" href="#r_behavior_c">Reach duration decreases as rats recover.</a>
-                                        </h4>
-                                    </div>
-                                    <div id="r_behavior_c"; class="panel-collapse collapse">
-                                        <div class="panel-body"; style="width:100%;height:100%">
-                                            <iframe class="figholder"; src="Figures/Fig-2-Behavior.html"></iframe>  
-                                            
-                                            <p class="abstract">
-                                                <em>Description of result...</em>
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="panel panel-default">
-                                    <div class="panel-heading">
-                                        <h4 class="panel-title">
-                                            <a data-toggle="collapse" data-parent="#accordion" href="#r_mua_single_c">Plasticity bias present in Single-Channel Multi-Unit Spiking Dynamics</a>
-                                        </h4>
-                                    </div>
-                                    <div id="r_mua_single_c" class="panel-collapse collapse">
-                                        <div class="panel-body"; style="width:100%;height:100%">
-                                            <iframe class="figholder"; src="Figures/Fig-3-Spike-Rates.html"></iframe>  
-                                            
-                                            <p class="abstract">
-                                                <em>Description of result...</em>
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="panel panel-default">
-                                    <div class="panel-heading">
-                                        <h4 class="panel-title">
-                                            <a data-toggle="collapse" data-parent="#accordion" href="#r_mua_pop_c">Plasticity bias not evident in Multi-Unit Population Spiking Dynamics</a>
-                                        </h4>
-                                    </div>
-                                    <div id="r_mua_pop_c"; class="panel-collapse collapse in"; style="width:100%;height:100%">
-                                        <div class="panel-body"; style="width:100%;height:100%">
-                                            <iframe class="resultsframe"; src="Results/GLM_jPCA.htm"></iframe>  
-                                            
-                                            <p class="abstract">
-                                                <em>Description of statistics result...</em>
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- Figures: Tabbed -->
-                            <h3>Figures</h3>
-                            <iframe class="storyframe"; name="storyboard_rates_display"; src="Figures/Storyboard_Rates.html"; id="storyboard_rates_iframe"></iframe>                            
-                        </div>
-                    </div>
-                    <!-- Discussion -->
-                    <div class="tab-pane tab-pane-main fade"; id="discussion";>
-                        <h3>Discussion</h3>
-                        <div class="panel-group" id="accordion">
+                
+                    <!-- Data sub-tab: Results -->
+                    <div class="tab tab-pane tab-pane-main fade"; id="data_results">
+                        <!-- Results/Stats -->
+                        <h3>Results</h3>
+                        <div class="panel-group"; id="results_accordion">
                             <div class="panel panel-default">
                                 <div class="panel-heading">
                                     <h4 class="panel-title">
-                                        <a data-toggle="collapse" data-parent="#accordion" href="#collapse1">Plasticity bias at the level of channel multi-unit spiking is not simply due to changes in behavior speed</a>
+                                        <a data-toggle="collapse"; data-parent="#results_accordion"; href="#results_1">Reach duration decreases as rats recover.</a>
                                     </h4>
                                 </div>
-                                <div id="collapse1" class="panel-collapse collapse in">
+                                <div id="results_1"; class="panel-collapse collapse">
+                                    <div class="panel-body"; style="width:100%;height:100%">
+                                        <iframe class="figholder"; src="Figures/Fig-2-Behavior.html"></iframe>  
+
+                                        <p class="abstract">
+                                            <em>Description of result...</em>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <h4 class="panel-title">
+                                        <a data-toggle="collapse"; data-parent="#results_accordion"; href="#results_2">
+                                            Plasticity bias present in Single-Channel Multi-Unit Spiking Dynamics
+                                        </a>
+                                    </h4>
+                                </div>
+                                <div id="results_2"; class="panel-collapse collapse">
+                                    <div class="panel-body"; style="width:100%;height:100%">
+                                        <iframe class="figholder"; src="Figures/Fig-3-Spike-Rates.html"></iframe>  
+
+                                        <p class="abstract">
+                                            <em>Description of result...</em>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <h4 class="panel-title">
+                                        <a data-toggle="collapse"; data-parent="#results_accordion"; href="#results_3">
+                                            Changes in the expression of multi-unit population dynamics are better-explained by total reach duration than by Injury or phase of recovery.
+                                        </a>
+                                    </h4>
+                                </div>
+                                <div id="results_3"; class="panel-collapse collapse"; style="width:100%;height:100%">
+                                    <div class="panel-body"; style="width:100%;height:100%">
+                                        <iframe class="resultsframe"; src="Results/Population_Dynamics_Stats.html"></iframe>  
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Data sub-tab: Figures -->
+                    <div class="tab-pane tab-pane-main fade"; id="data_figures";>
+                        <!-- Figures: Tabbed -->
+                        <h3>Figures</h3>
+                        <iframe class="storyframe"; name="storyboard_rates_display"; src="Figures/Storyboard_Rates.html"; id="storyboard_rates_iframe"></iframe>
+                    </div>
+                
+                    <!-- Discussion -->
+                    <div class="tab-pane tab-pane-main fade"; id="discussion";>
+                        <h3>Discussion</h3>
+                        <div class="panel-group" id="discussion_accordion">
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <h4 class="panel-title">
+                                        <a data-toggle="collapse"; data-parent="#discussion_accordion"; href="#disc_pt1">Plasticity bias at the level of channel multi-unit spiking is not simply due to changes in behavior speed</a>
+                                    </h4>
+                                </div>
+                                <div id="disc_pt1" class="panel-collapse collapse">
                                     <div class="panel-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit,
                                         sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
                                         quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
@@ -150,10 +190,10 @@
                             <div class="panel panel-default">
                                 <div class="panel-heading">
                                     <h4 class="panel-title">
-                                        <a data-toggle="collapse" data-parent="#accordion" href="#collapse2">Compensatory mechanisms rely upon most-efficient existing anatomical substrates</a>
+                                        <a data-toggle="collapse" data-parent="#discussion_accordion" href="#disc_pt2">Compensatory mechanisms rely upon most-efficient existing anatomical substrates</a>
                                     </h4>
                                 </div>
-                                <div id="collapse2" class="panel-collapse collapse">
+                                <div id="disc_pt2" class="panel-collapse collapse">
                                     <div class="panel-body">
                                         Lorem ipsum dolor sit amet, consectetur adipisicing elit,
                                         sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
@@ -164,10 +204,10 @@
                             <div class="panel panel-default">
                                 <div class="panel-heading">
                                     <h4 class="panel-title">
-                                        <a data-toggle="collapse" data-parent="#accordion" href="#collapse3">Lack of plasticity bias in spiking population dynamics</a>
+                                        <a data-toggle="collapse" data-parent="#discussion_accordion" href="#disc_pt3">Lack of plasticity bias in spiking population dynamics</a>
                                     </h4>
                                 </div>
-                                <div id="collapse3" class="panel-collapse collapse">
+                                <div id="disc_pt3" class="panel-collapse collapse">
                                     <div class="panel-body">
                                         Lorem ipsum dolor sit amet, consectetur adipisicing elit,
                                         sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
@@ -190,28 +230,28 @@
                         </ul> 
                         <div class="tab-content">
                             <div class="tab-pane fade"; id="setup_tab">
-                                <div class="col-sm-3">
+                                <div class="col-sm-2">
                                 </div>
-                                <div class="col-sm-9">
+                                <div class="col-sm-10">
                                     <iframe class="methodsframe"; src="Figures/Fig-1-Overview.html"; id="experiment_setup_iframe"></iframe>
                                 </div>
                             </div>
                             <div class="tab-pane fade"; id="vidscore_tab">
-                                <div class="col-sm-3">
+                                <div class="col-sm-2">
                                 </div>
-                                <div class="col-sm-9">
+                                <div class="col-sm-10">
                                     <iframe class="methodsframe"; src="Methods/Video_Scoring.html"; id="video_scoring_iframe"></iframe>
                                 </div>
                             </div>
                             <div class="tab-pane fade in active"; id="spikes_tab">
-                                <div class="col-sm-3">
+                                <div class="col-sm-2">
                                     <ul class="nav nav-pills nav-stacked">
                                         <li class="active"><a data-toggle="tab"; href="#spikem_main">Overview</a></li>
                                         <li><a data-toggle="tab"; href="#spikem_single_channels">Multi-Unit Activity: Single-Channels</a></li>
                                         <li><a data-toggle="tab"; href="#spikem_population_dynamics">Multi-Unit Activity: Population Dynamics</a></li>
                                     </ul>
                                 </div>
-                                <div class="col-sm-9">
+                                <div class="col-sm-10">
                                     <div class="tab-content"; style="width:100%;height:100%">
                                         <!--Spike analyses overview sub-pane -->
                                         <div class="tab-pane fade in active"; id="spikem_main"; style="width:100%;height:100%">

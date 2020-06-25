@@ -1,7 +1,8 @@
 /* Main: contains "main" contents in grid */
 div.row.row-main {
-    height: 79%;
+    height: 70%;
     width: 100%;
+    min-height:850px;
     border-style: none;
     background-color: transparent;
     overflow-x: auto;
@@ -14,8 +15,8 @@ div.container.container-fluid.container-fluid-main {
     width: 100%;
     border-style: none;
     background-color: transparent;
-    overflow-x: auto;
-    overflow-y: auto;
+    overflow-x: hidden;
+    overflow-y: hidden;
 }
 
 /* pane-main: Fills "tab-content-main" based on active tab */
@@ -38,13 +39,6 @@ div.tab.tab-content.tab-content-main {
     background-color: transparent;
     overflow-x: auto;
     overflow-y: auto;
-}
-
-iframe.storyframe {
-    width:1080px;
-    height: 360px;
-    background-color: transparent;
-    border-style: none;
 }
 
 .display {

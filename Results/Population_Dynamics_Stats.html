@@ -1,0 +1,217 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge,IE=9,chrome=1"><meta name="generator" content="MATLAB R2019b"><title>Fitting the population dynamics statistical model</title><style type="text/css">.rtcContent { padding: 30px; } .S0 { margin: 3px 10px 5px 4px; padding: 0px; line-height: 28.8px; min-height: 0px; white-space: pre-wrap; color: rgb(213, 80, 0); font-family: Helvetica, Arial, sans-serif; font-style: normal; font-size: 24px; font-weight: 400; text-align: left;  }
+.S1 { margin: 2px 10px 9px 4px; padding: 0px; line-height: 21px; min-height: 0px; white-space: pre-wrap; color: rgb(0, 0, 0); font-family: Helvetica, Arial, sans-serif; font-style: normal; font-size: 14px; font-weight: 400; text-align: left;  }
+.S2 { margin: 20px 10px 5px 4px; padding: 0px; line-height: 20px; min-height: 0px; white-space: pre-wrap; color: rgb(60, 60, 60); font-family: Helvetica, Arial, sans-serif; font-style: normal; font-size: 20px; font-weight: 700; text-align: left;  }
+.S3 { margin: 15px 10px 5px 4px; padding: 0px; line-height: 18px; min-height: 0px; white-space: pre-wrap; color: rgb(60, 60, 60); font-family: Helvetica, Arial, sans-serif; font-style: normal; font-size: 17px; font-weight: 700; text-align: left;  }
+.S4 { margin: 10px 10px 5px 4px; padding: 0px; line-height: 18px; min-height: 0px; white-space: pre-wrap; color: rgb(60, 60, 60); font-family: Helvetica, Arial, sans-serif; font-style: normal; font-size: 15px; font-weight: 700; text-align: left;  }
+.S5 { margin: 10px 0px 20px; padding-left: 0px; font-family: Helvetica, Arial, sans-serif; font-size: 14px;  }
+.S6 { margin-left: 56px; line-height: 21px; min-height: 0px; text-align: left; white-space: pre-wrap;  }
+.CodeBlock { background-color: #F7F7F7; margin: 10px 0 10px 0;}
+.S7 { border-left: 1px solid rgb(233, 233, 233); border-right: 1px solid rgb(233, 233, 233); border-top: 1px solid rgb(233, 233, 233); border-bottom: 1px solid rgb(233, 233, 233); border-radius: 4px; padding: 6px 45px 4px 13px; line-height: 16.996px; min-height: 18px; white-space: nowrap; color: rgb(0, 0, 0); font-family: Menlo, Monaco, Consolas, "Courier New", monospace; font-size: 14px;  }
+.S8 { margin: 3px 10px 5px 4px; padding: 0px; line-height: 20px; min-height: 0px; white-space: pre-wrap; color: rgb(60, 60, 60); font-family: Helvetica, Arial, sans-serif; font-style: normal; font-size: 20px; font-weight: 700; text-align: left;  }
+.S9 { border-left: 1px solid rgb(233, 233, 233); border-right: 1px solid rgb(233, 233, 233); border-top: 1px solid rgb(233, 233, 233); border-bottom: 1px solid rgb(233, 233, 233); border-radius: 4px 4px 0px 0px; padding: 6px 45px 4px 13px; line-height: 16.996px; min-height: 18px; white-space: nowrap; color: rgb(0, 0, 0); font-family: Menlo, Monaco, Consolas, "Courier New", monospace; font-size: 14px;  }
+.S10 { color: rgb(64, 64, 64); padding: 10px 0px 6px 17px; background: rgb(255, 255, 255) none repeat scroll 0% 0% / auto padding-box border-box; font-family: Menlo, Monaco, Consolas, "Courier New", monospace; font-size: 14px; overflow-x: hidden; line-height: 16.996px;  }
+.embeddedOutputsErrorElement {min-height: 18px; max-height: 250px; overflow: auto;}
+.embeddedOutputsErrorElement.inlineElement {}
+.embeddedOutputsErrorElement.rightPaneElement {}
+.embeddedOutputsWarningElement{min-height: 18px; max-height: 250px; overflow: auto;}
+.embeddedOutputsWarningElement.inlineElement {}
+.embeddedOutputsWarningElement.rightPaneElement {}
+.diagnosticMessage-wrapper {font-family: Menlo, Monaco, Consolas, "Courier New", monospace; font-size: 12px;}
+.diagnosticMessage-wrapper.diagnosticMessage-warningType {color: rgb(255,100,0);}
+.diagnosticMessage-wrapper.diagnosticMessage-warningType a {color: rgb(255,100,0); text-decoration: underline;}
+.diagnosticMessage-wrapper.diagnosticMessage-errorType {color: rgb(230,0,0);}
+.diagnosticMessage-wrapper.diagnosticMessage-errorType a {color: rgb(230,0,0); text-decoration: underline;}
+.diagnosticMessage-wrapper .diagnosticMessage-messagePart,.diagnosticMessage-wrapper .diagnosticMessage-causePart {white-space: pre-wrap;}
+.diagnosticMessage-wrapper .diagnosticMessage-stackPart {white-space: pre;}
+.embeddedOutputsTextElement,.embeddedOutputsVariableStringElement {white-space: pre; word-wrap: initial; min-height: 18px; max-height: 250px; overflow: auto;}
+.textElement,.rtcDataTipElement .textElement {padding-top: 3px;}
+.embeddedOutputsTextElement.inlineElement,.embeddedOutputsVariableStringElement.inlineElement {}
+.inlineElement .textElement {}
+.embeddedOutputsTextElement.rightPaneElement,.embeddedOutputsVariableStringElement.rightPaneElement {min-height: 16px;}
+.rightPaneElement .textElement {padding-top: 2px; padding-left: 9px;}
+.S11 { border-left: 1px solid rgb(233, 233, 233); border-right: 1px solid rgb(233, 233, 233); border-top: 1px solid rgb(233, 233, 233); border-bottom: 1px solid rgb(233, 233, 233); border-radius: 0px; padding: 6px 45px 4px 13px; line-height: 16.996px; min-height: 18px; white-space: nowrap; color: rgb(0, 0, 0); font-family: Menlo, Monaco, Consolas, "Courier New", monospace; font-size: 14px;  }
+.S12 { margin: 15px 10px 5px 4px; padding: 0px; line-height: 28.8px; min-height: 0px; white-space: pre-wrap; color: rgb(213, 80, 0); font-family: Helvetica, Arial, sans-serif; font-style: normal; font-size: 24px; font-weight: 400; text-align: left;  }
+.S13 { margin: 10px 10px 9px 4px; padding: 0px; line-height: 21px; min-height: 0px; white-space: pre-wrap; color: rgb(0, 0, 0); font-family: Helvetica, Arial, sans-serif; font-style: normal; font-size: 14px; font-weight: 400; text-align: left;  }</style></head><body><div class = rtcContent><h1  class = 'S0'><span>Fitting the population dynamics statistical model</span></h1><div  class = 'S1'><span>See </span><a href = "matlab:opentoline('marg.mlx',1);"><span>Marginal Analyses</span></a><span> for details about exporting the data table used in statistical analysis.</span></div><h2  class = 'S2'><span>Define model specifications</span></h2><div  class = 'S1'><span>Use </span><a href = "https://www.mathworks.com/help/stats/wilkinson-notation.html"><span>Wilkinson Notation</span></a><span style=' font-weight: bold;'> </span><span>to define two generalized linear mixed effects models; one simple model that ignores the behavioral covariate and one that accounts for </span><span style=' font-weight: bold;'>Reach Duration</span><span>.</span></div><h3  class = 'S3'><span>Simple Model</span></h3><div  class = 'S1'><span>The following terms are included in our model:</span></div><h4  class = 'S4'><span>Response</span></h4><ul  class = 'S5'><li  class = 'S6'><span style=' font-weight: bold; font-family: monospace;'>RotationStrength</span><span style=' font-weight: bold;'> </span><span>: The "rotation strength" is estimated by multiplying the coefficient of determination by the percent of the total sum of eigenvalues of the jPCA projection matrix made up by the pair of eigenvalues corresponding to a particular "rotatory subspace plane". The value is also scaled such that the upper bound is set by the percent of the total data explained by the total number of principal components used in the initial step of setting up the linear regression to recover the projection matrix. When this value is high, it therefore means we are "capturing" a lot of the data in this subspace, that we are reconstructing the data well using the linearized dynamical system designed to represent a rotational basis, and that the data we used in the regression to begin with represent most of the observed neural data. Note that we apply a log transform to the final value to help normalize the distribution for the GLME fit.</span></li></ul><h4  class = 'S4'><span>Fixed Effects</span></h4><ul  class = 'S5'><li  class = 'S6'><span style=' font-weight: bold; font-family: monospace;'>GroupID</span><span style=' font-weight: bold;'> : </span><span>Categorical fixed main effect with two levels: "Ischemia" or "Intact"</span></li><li  class = 'S6'><span style=' font-weight: bold; font-family: monospace;'>PostOpDay</span><span style=' font-weight: bold;'> : </span><span>Continuous fixed main effect on the range [3, 30].</span></li><li  class = 'S6'><span style=' font-weight: bold; font-family: monospace;'>GroupID*PostOpDay </span><span style=' font-weight: bold;'>:</span><span> Main interaction effect, which is really what we're interested in.</span></li><li  class = 'S6'><span style=' font-weight: bold; font-family: monospace;'>Intercept</span><span style=' font-weight: bold;'> : </span><span>Note that </span><span style=' font-family: monospace;'>MATLAB</span><span> automatically adds an intercept term unless it's explicitly removed from the expression.</span></li></ul><h4  class = 'S4'><span>Random Effects</span></h4><ul  class = 'S5'><li  class = 'S6'><span style=' font-weight: bold; font-family: monospace;'>AnimalID</span><span style=' font-weight: bold;'> : </span><span>Categorical variable which is only used to group a random intercept term for each animal, which might be expected intrinsically to have certain differences in the ability to demonstrate rotatory projections, for example simply due to the electrode location.</span></li><li  class = 'S6'><span style=' font-weight: bold; font-family: monospace;'>PlaneIndex</span><span style=' font-weight: bold;'> : </span><span>We recovered the top-3 jPCA planes; that should account for the majority of "rotatory dynamics" observed during the behavior, but instead of setting any other arbitrary threshold, instead we will allow this random term that groups intercept by Plane Index so that if in general there is some bias at a certain plane "rank" then it should be accounted for here.</span></li></ul><div class="CodeBlock"><div class="inlineWrapper"><div  class = 'S7'><span style="white-space: pre;"><span>simple_model = </span><span style="color: rgb(160, 32, 240);">"RotationStrength~GroupID*PostOpDay+(1|PlaneIndex)+(1|AnimalID)"</span><span>;</span></span></div></div></div><h3  class = 'S3'><span>Complex Model</span></h3><div  class = 'S1'><span>The complex model includes all the terms of the </span><span style=' font-family: monospace;'>simple_model</span><span> but additionally has one more fixed effect in the main interaction:</span></div><ul  class = 'S5'><li  class = 'S6'><span style=' font-weight: bold; font-family: monospace;'>Duration</span><span style=' font-weight: bold;'> : </span><span>This is the reach duration, which is known to be an important covariate of neural dynamics. It is clear that reach duration on average becomes shorter in rats as they recover from focal ischemia.</span></li></ul><div class="CodeBlock"><div class="inlineWrapper"><div  class = 'S7'><span style="white-space: pre;"><span>complex_model = </span><span style="color: rgb(160, 32, 240);">"RotationStrength~GroupID*PostOpDay*Duration+(1|PlaneIndex)+(1|AnimalID)"</span><span>;</span></span></div></div></div><h2  class = 'S8'><span>Fit models</span></h2><div  class = 'S1'><span>Use the </span><span style=' font-family: monospace;'>fitglme</span><span> function to recover two generalized linear mixed-effects models, which are then compared in order to determine if it is necessary to include </span><span style=' font-weight: bold; font-family: monospace;'>Duration</span><span style=' font-weight: bold;'> </span><span>as a model term, since this has a substantial effect on interpreting the model. Here, we do not suppress the output to the Command Window so that we can see what statistics are returned. Note that in order to use a likelihood ratio test for comparison of the two models, we </span><span style=' font-weight: bold;'>must </span><span>use the </span><span style=' font-weight: bold;'>Laplace </span><span>(or approximate Laplace) fitting method, as MPL or REMPL methods do not allow models to be compared since in MPL the maximized log-likelihood of the pseudodata from the final pseudo likelihood iteration is used in the likelihood ratio test.</span></div><div class="CodeBlock"><div class="inlineWrapper outputs"><div  class = 'S9'><span style="white-space: pre;"><span>glme_simple  = fitglme(E,simple_model,</span><span style="color: rgb(160, 32, 240);">'Verbose'</span><span>,0,</span><span style="color: rgb(160, 32, 240);">'FitMethod'</span><span>,</span><span style="color: rgb(160, 32, 240);">'Laplace'</span><span>)</span></span></div><div  class = 'S10'><div class="inlineElement eoOutputWrapper embeddedOutputsVariableStringElement scrollableOutput" uid="F0687871" data-testid="output_0" data-width="1082" data-height="538" data-hashorizontaloverflow="false" data-scroll-top="277" data-scroll-left="0" style="width: 1112px; max-height: 261px;"><div class="textElement"><div><span class="variableNameElement">glme_simple = </span></div><div><strong>Generalized linear mixed-effects model fit by ML</strong>
+
+<strong>Model information:</strong>
+    Number of observations            3239
+    Fixed effects coefficients           4
+    Random effects coefficients         11
+    Covariance parameters                3
+    Distribution                    Normal
+    Link                            Identity
+    FitMethod                       Laplace
+
+<strong>Formula:</strong>
+    RotationStrength ~ 1 + GroupID*PostOpDay + (1 | PlaneIndex) + (1 | AnimalID)
+
+<strong>Model fit statistics:</strong>
+    AIC        BIC        LogLikelihood    Deviance
+    -4445.5    -4402.9    2229.8           -4459.5 
+
+<strong>Fixed effects coefficients (95% CIs):</strong>
+    Name                                  Estimate     SE           tStat       DF      pValue        Lower         Upper     
+    {'(Intercept)'               }         0.072462      0.15445     0.46917    3235       0.63898      -0.23036       0.37528
+    {'GroupID_Ischemia'          }        0.0014811     0.044684    0.033147    3235       0.97356      -0.08613      0.089092
+    {'PostOpDay'                 }         0.003892    0.0014051      2.7698    3235     0.0056404      0.001137     0.0066471
+    {'GroupID_Ischemia:PostOpDay'}        -0.006764    0.0014606     -4.6311    3235    3.7814e-06    -0.0096277    -0.0039002
+
+<strong>Random effects covariance parameters:</strong>
+Group: PlaneIndex (3 Levels)
+    Name1                  Name2                  Type           Estimate
+    {'(Intercept)'}        {'(Intercept)'}        {'std'}        0.25881 
+
+Group: AnimalID (8 Levels)
+    Name1                  Name2                  Type           Estimate
+    {'(Intercept)'}        {'(Intercept)'}        {'std'}        0.049863
+
+Group: Error
+    Name                        Estimate
+    {'sqrt(Dispersion)'}        0.12064 
+</div></div></div></div></div><div class="inlineWrapper outputs"><div  class = 'S11'><span style="white-space: pre;"><span>disp(glme_simple.Rsquared)</span></span></div><div  class = 'S10'><div class="inlineElement eoOutputWrapper embeddedOutputsTextElement" uid="4D10F2F9" data-testid="output_1" data-width="1082" data-height="31" data-hashorizontaloverflow="false" style="width: 1112px; max-height: 261px;"><div class="textElement">    Ordinary: 0.8288
+    Adjusted: 0.8286</div></div></div></div><div class="inlineWrapper outputs"><div  class = 'S11'><span style="white-space: pre;"><span>glme_complex = fitglme(E,complex_model,</span><span style="color: rgb(160, 32, 240);">'Verbose'</span><span>,0,</span><span style="color: rgb(160, 32, 240);">'FitMethod'</span><span>,</span><span style="color: rgb(160, 32, 240);">'Laplace'</span><span>)</span></span></div><div  class = 'S10'><div class="inlineElement eoOutputWrapper embeddedOutputsVariableStringElement scrollableOutput" uid="12F97E78" data-testid="output_2" data-width="1082" data-height="594" data-hashorizontaloverflow="false" data-scroll-top="133" data-scroll-left="0" style="width: 1112px; max-height: 261px;"><div class="textElement"><div><span class="variableNameElement">glme_complex = </span></div><div><strong>Generalized linear mixed-effects model fit by ML</strong>
+
+<strong>Model information:</strong>
+    Number of observations            3239
+    Fixed effects coefficients           8
+    Random effects coefficients         11
+    Covariance parameters                3
+    Distribution                    Normal
+    Link                            Identity
+    FitMethod                       Laplace
+
+<strong>Formula:</strong>
+    RotationStrength ~ 1 + GroupID*PostOpDay + GroupID*Duration + PostOpDay*Duration + GroupID:PostOpDay:Duration + (1 | PlaneIndex) + (1 | AnimalID)
+
+<strong>Model fit statistics:</strong>
+    AIC        BIC      LogLikelihood    Deviance
+    -4447.9    -4381    2235             -4469.9 
+
+<strong>Fixed effects coefficients (95% CIs):</strong>
+    Name                                           Estimate      SE          tStat        DF      pValue     Lower        Upper   
+    {'(Intercept)'                        }        -0.0073912     0.22489    -0.032866    3231    0.97378     -0.44833     0.43355
+    {'GroupID_Ischemia'                   }          0.057393     0.17161      0.33444    3231    0.73807     -0.27908     0.39387
+    {'PostOpDay'                          }         0.0029315    0.016773      0.17477    3231    0.86127    -0.029956    0.035819
+    {'Duration'                           }            0.1358     0.25075      0.54158    3231    0.58815     -0.35585     0.62745
+    {'GroupID_Ischemia:PostOpDay'         }        -0.0030036    0.016843     -0.17833    3231    0.85848    -0.036028    0.030021
+    {'GroupID_Ischemia:Duration'          }         -0.077977     0.25584     -0.30479    3231    0.76055      -0.5796     0.42365
+    {'PostOpDay:Duration'                 }        0.00083389    0.025097     0.033227    3231     0.9735    -0.048374    0.050041
+    {'GroupID_Ischemia:PostOpDay:Duration'}        -0.0070649    0.025278     -0.27949    3231    0.77989    -0.056627    0.042497
+
+<strong>Random effects covariance parameters:</strong>
+Group: PlaneIndex (3 Levels)
+    Name1                  Name2                  Type           Estimate
+    {'(Intercept)'}        {'(Intercept)'}        {'std'}        0.25877 
+
+Group: AnimalID (8 Levels)
+    Name1                  Name2                  Type           Estimate
+    {'(Intercept)'}        {'(Intercept)'}        {'std'}        0.049402
+
+Group: Error
+    Name                        Estimate
+    {'sqrt(Dispersion)'}        0.12045 
+</div></div></div></div></div><div class="inlineWrapper outputs"><div  class = 'S11'><span style="white-space: pre;"><span>disp(glme_complex.Rsquared)</span></span></div><div  class = 'S10'><div class="inlineElement eoOutputWrapper embeddedOutputsTextElement" uid="ABB2069B" data-testid="output_3" data-width="1082" data-height="31" data-hashorizontaloverflow="false" style="width: 1112px; max-height: 261px;"><div class="textElement">    Ordinary: 0.8293
+    Adjusted: 0.8290</div></div></div></div></div><h1  class = 'S12'><span>The model is significantly impacted by choice to include </span><span style=' font-weight: bold;'>Duration </span><span>as a fixed effect.</span></h1><div  class = 'S1'><span>Intuitively, it makes sense. If the rat reaches faster, it stands to reason that elements of the behavior requiring cortical activation will be closer together (in time), meaning that the apparent signals observed will look different! That's okay though- both models have a qualitatively good fit to the data, so shouldn't we just use the simpler one?</span></div><div class="CodeBlock"><div class="inlineWrapper outputs"><div  class = 'S9'><span style="white-space: pre;"><span>results = compare(glme_simple,glme_complex,</span><span style="color: rgb(160, 32, 240);">'CheckNesting'</span><span>,true)</span></span></div><div  class = 'S10'><div class="inlineElement eoOutputWrapper embeddedOutputsVariableStringElement" uid="D0123745" data-testid="output_4" data-width="1082" data-height="90" data-hashorizontaloverflow="false" style="width: 1112px; max-height: 261px;"><div class="textElement"><div><span class="variableNameElement">results = </span></div><div>    <strong>Theoretical Likelihood Ratio Test</strong>
+
+    Model           DF    AIC        BIC        LogLik    LRStat    deltaDF    pValue  
+    glme_simple      7    -4445.5    -4402.9    2229.8                                 
+    glme_complex    11    -4447.9      -4381      2235    10.425    4          0.033852
+</div></div></div></div></div></div><div  class = 'S13'><span style=' font-weight: bold;'>No. </span><span>The comparison indicates that the log-likelihood is significantly improved (p = 0.034) relative to the degrees of freedom that were added. Therefore, </span><span style=' font-weight: bold;'>we should retain the model that includes Duration.</span></div><h2  class = 'S2'><span style=' font-weight: bold;'>Conclusion</span></h2><div  class = 'S1'><span>When reach duration is not accounted for, it appears that there is an increase in "rotatory dynamics" strength by day that is only present for Intact rats, strongly differentiating them from Ischemic rats, which demonstrate a decline in rotatory dynamics strength by day. However, accounting for </span><span style=' font-weight: bold;'>Duration</span><span>, which significantly improves our ability to explain the data and therefore indicates that the term should be included in our statistical model, suggests that there is </span><span style=' font-weight: bold;'>no effect on dynamics present; this is not even the case at the main fixed effect level of Ischemic vs. Intact rats (without accounting for Post-Operative Day).</span></div></div>
+<br>
+<!-- 
+##### SOURCE BEGIN #####
+%% Fitting the population dynamics statistical model
+% See <matlab:opentoline('marg.mlx',1); Marginal Analyses> for details about 
+% exporting the data table used in statistical analysis.
+%% Define model specifications
+% Use <https://www.mathworks.com/help/stats/wilkinson-notation.html Wilkinson 
+% Notation> to define two generalized linear mixed effects models; one simple 
+% model that ignores the behavioral covariate and one that accounts for *Reach 
+% Duration*.
+% Simple Model
+% The following terms are included in our model:
+% Response
+%% 
+% * |*RotationStrength| : The "rotation strength" is estimated by multiplying 
+% the coefficient of determination by the percent of the total sum of eigenvalues 
+% of the jPCA projection matrix made up by the pair of eigenvalues corresponding 
+% to a particular "rotatory subspace plane". The value is also scaled such that 
+% the upper bound is set by the percent of the total data explained by the total 
+% number of principal components used in the initial step of setting up the linear 
+% regression to recover the projection matrix. When this value is high, it therefore 
+% means we are "capturing" a lot of the data in this subspace, that we are reconstructing 
+% the data well using the linearized dynamical system designed to represent a 
+% rotational basis, and that the data we used in the regression to begin with 
+% represent most of the observed neural data. Note that we apply a log transform 
+% to the final value to help normalize the distribution for the GLME fit.
+% Fixed Effects
+%% 
+% * |*GroupID| :* Categorical fixed main effect with two levels: "Ischemia" 
+% or "Intact"
+% * |*PostOpDay| :* Continuous fixed main effect on the range [3, 30].
+% * |*GroupID*PostOpDay| :* Main interaction effect, which is really what we're 
+% interested in.
+% * |*Intercept| :* Note that |MATLAB| automatically adds an intercept term 
+% unless it's explicitly removed from the expression.
+% Random Effects
+%% 
+% * |*AnimalID| :* Categorical variable which is only used to group a random 
+% intercept term for each animal, which might be expected intrinsically to have 
+% certain differences in the ability to demonstrate rotatory projections, for 
+% example simply due to the electrode location.
+% * |*PlaneIndex| :* We recovered the top-3 jPCA planes; that should account 
+% for the majority of "rotatory dynamics" observed during the behavior, but instead 
+% of setting any other arbitrary threshold, instead we will allow this random 
+% term that groups intercept by Plane Index so that if in general there is some 
+% bias at a certain plane "rank" then it should be accounted for here.
+
+simple_model = "RotationStrength~GroupID*PostOpDay+(1|PlaneIndex)+(1|AnimalID)";
+% Complex Model
+% The complex model includes all the terms of the |simple_model| but additionally 
+% has one more fixed effect in the main interaction:
+%% 
+% * |*Duration| :* This is the reach duration, which is known to be an important 
+% covariate of neural dynamics. It is clear that reach duration on average becomes 
+% shorter in rats as they recover from focal ischemia.
+
+complex_model = "RotationStrength~GroupID*PostOpDay*Duration+(1|PlaneIndex)+(1|AnimalID)";
+%% Fit models
+% Use the |fitglme| function to recover two generalized linear mixed-effects 
+% models, which are then compared in order to determine if it is necessary to 
+% include |*Duration| as a model term, since this has a substantial effect on 
+% interpreting the model. Here, we do not suppress the output to the Command Window 
+% so that we can see what statistics are returned. Note that in order to use a 
+% likelihood ratio test for comparison of the two models, we *must* use the *Laplace* 
+% (or approximate Laplace) fitting method, as MPL or REMPL methods do not allow 
+% models to be compared since in MPL the maximized log-likelihood of the pseudodata 
+% from the final pseudo likelihood iteration is used in the likelihood ratio test.
+
+glme_simple  = fitglme(E,simple_model,'Verbose',0,'FitMethod','Laplace')
+disp(glme_simple.Rsquared)
+glme_complex = fitglme(E,complex_model,'Verbose',0,'FitMethod','Laplace')
+disp(glme_complex.Rsquared)
+%% The model is significantly impacted by choice to include *Duration* as a fixed effect.
+% Intuitively, it makes sense. If the rat reaches faster, it stands to reason 
+% that elements of the behavior requiring cortical activation will be closer together 
+% (in time), meaning that the apparent signals observed will look different! That's 
+% okay though- both models have a qualitatively good fit to the data, so shouldn't 
+% we just use the simpler one?
+
+results = compare(glme_simple,glme_complex,'CheckNesting',true)
+%% 
+% *No.* The comparison indicates that the log-likelihood is significantly improved 
+% (p = 0.034) relative to the degrees of freedom that were added. Therefore, *we 
+% should retain the model that includes Duration.*
+%% *Conclusion*
+% When reach duration is not accounted for, it appears that there is an increase 
+% in "rotatory dynamics" strength by day that is only present for Intact rats, 
+% strongly differentiating them from Ischemic rats, which demonstrate a decline 
+% in rotatory dynamics strength by day. However, accounting for *Duration*, which 
+% significantly improves our ability to explain the data and therefore indicates 
+% that the term should be included in our statistical model, suggests that there 
+% is *no effect on dynamics present; this is not even the case at the main fixed 
+% effect level of Ischemic vs. Intact rats (without accounting for Post-Operative 
+% Day).*
+##### SOURCE END #####
+--></body></html>
