@@ -40,8 +40,8 @@
                 <li class="active"><a data-toggle="tab"; data-target="#abstract">Abstract</a></li>
                 <li class="dropdown"><a class="dropdown-toggle"; data-toggle="dropdown"; href="#">Data<span class="caret"></span></a>
                     <ul class="dropdown-menu">
+                        <li><a data-toggle="tab"; data-target="#data_overview">Overview</a></li>
                         <li><a data-toggle="tab"; data-target="#data_results">Results</a></li>
-                        <li><a data-toggle="tab"; data-target="#data_figures">Figures</a></li>
                     </ul>
                 </li>
                 <li><a data-toggle="tab"; data-target="#discussion">Discussion</a></li>
@@ -104,7 +104,12 @@
                             <p class="abstract">
                                 These data show a shift in neuronal firing patterns in the contralateral PM and ipsilateral M1 during behavioral recovery in injured rats compared to a non-injured control group, suggesting that spike-timing properties are altered in specific phases of the task, and that this altered activity supports the ability to re-acquire functional motor behaviors after stroke. <a href="#data"; data-toggle="pill"; style="font-weight:bold">Details.</a>
                             </p>
-                        </p> 
+                    </div>
+                
+                    <!-- Data sub-tab: Overview -->
+                    <div class="tab-pane tab-pane-main fade"; id="data_overview";>
+                        <h3>Overview</h3>
+                        <iframe class="storyframe"; name="storyboard_rates_display"; src="Figures/Storyboard_Rates.html"; id="storyboard_rates_iframe"></iframe>
                     </div>
                 
                     <!-- Data sub-tab: Results -->
@@ -150,24 +155,31 @@
                                 <div class="panel-heading">
                                     <h4 class="panel-title">
                                         <a data-toggle="collapse"; data-parent="#results_accordion"; href="#results_3">
-                                            Changes in the expression of multi-unit population dynamics are better-explained by total reach duration than by Injury or phase of recovery.
+                                            Changes in Population Dynamics are most-evident during the first ten days after injury.
                                         </a>
                                     </h4>
                                 </div>
                                 <div id="results_3"; class="panel-collapse collapse"; style="width:100%;height:100%">
                                     <div class="panel-body"; style="width:100%;height:100%">
-                                        <iframe class="resultsframe"; src="Results/Population_Dynamics_Stats.html"></iframe>  
+                                        <iframe class="resultsframe"; src="Methods/Rotatory_Distributions.html"></iframe>  
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <h4 class="panel-title">
+                                        <a data-toggle="collapse"; data-parent="#results_accordion"; href="#results_4">
+                                            Control system dynamics are restored by 3-4 weeks after injury.
+                                        </a>
+                                    </h4>
+                                </div>
+                                <div id="results_4"; class="panel-collapse collapse"; style="width:100%;height:100%">
+                                    <div class="panel-body"; style="width:100%;height:100%">
+                                        <iframe class="resultsframe"; src="Results/Population_Dynamics_Stats.html"></iframe>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    
-                    <!-- Data sub-tab: Figures -->
-                    <div class="tab-pane tab-pane-main fade"; id="data_figures";>
-                        <!-- Figures: Tabbed -->
-                        <h3>Figures</h3>
-                        <iframe class="storyframe"; name="storyboard_rates_display"; src="Figures/Storyboard_Rates.html"; id="storyboard_rates_iframe"></iframe>
                     </div>
                 
                     <!-- Discussion -->
