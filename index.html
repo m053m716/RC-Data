@@ -7,6 +7,8 @@
     <meta name="description"; content="Data Visualization">
     <meta name="keywords"; content="RC, Rat Reaching, Rehabilitation, Preclinical Studies, Neurophysiology, Motor Cortex">
     <meta name="author"; content="Max Murphy">
+    <!-- Favicon -->
+    <link rel="icon"; href="https://media.githubusercontent.com/media/m053m716/RC-Data/master/images/Rat_Skull_Icon.png">
     <!-- Bootstrap Layout css -->
     <link rel="stylesheet"; href="bootstrap/3.4.1/css/bootstrap.min.css">
     <!-- Custom Style css -->
@@ -102,7 +104,7 @@
                             </p> 
                         <h4>Result</h4>
                             <p class="abstract">
-                                These data show a shift in neuronal firing patterns in the contralateral PM and ipsilateral M1 during behavioral recovery in injured rats compared to a non-injured control group, suggesting that spike-timing properties are altered in specific phases of the task, and that this altered activity supports the ability to re-acquire functional motor behaviors after stroke. <a href="#data"; data-toggle="pill"; style="font-weight:bold">Details.</a>
+                                These data show a shift in neuronal firing patterns in the contralateral PM and ipsilateral M1 during behavioral recovery in injured rats compared to a non-injured control group, suggesting that spike-timing properties are altered in specific phases of the task, and that this altered activity supports the ability to re-acquire functional motor behaviors after stroke. <a href="#data_results"; data-toggle="pill"; style="font-weight:bold">Details.</a>
                             </p>
                     </div>
                 
@@ -147,7 +149,7 @@
                                 <div class="panel-heading">
                                     <h4 class="panel-title">
                                         <a data-toggle="collapse"; data-parent="#results_accordion"; href="#results_3">
-                                            Changes in Population Dynamics are most-evident during the first ten days after injury.
+                                            Changes in Population Dynamics are most-evident during <strong>post-op days 8-15</strong>.
                                         </a>
                                     </h4>
                                 </div>
@@ -181,7 +183,7 @@
                             <div class="panel panel-default">
                                 <div class="panel-heading">
                                     <h4 class="panel-title">
-                                        <a data-toggle="collapse"; data-parent="#discussion_accordion"; href="#disc_pt1">Plasticity bias at the level of channel multi-unit spiking is not simply due to changes in behavior speed</a>
+                                        <a data-toggle="collapse"; data-parent="#discussion_accordion"; href="#disc_pt1">Multi-unit spiking does not differentiate ischemic and intact rats at the level of single-channel spiking activity.</a>
                                     </h4>
                                 </div>
                                 <div id="disc_pt1" class="panel-collapse collapse">
@@ -194,7 +196,7 @@
                             <div class="panel panel-default">
                                 <div class="panel-heading">
                                     <h4 class="panel-title">
-                                        <a data-toggle="collapse" data-parent="#discussion_accordion" href="#disc_pt2">Compensatory mechanisms rely upon most-efficient existing anatomical substrates</a>
+                                        <a data-toggle="collapse" data-parent="#discussion_accordion" href="#disc_pt2">Plasticity is most-evident in structured changes to population dynamics with time.</a>
                                     </h4>
                                 </div>
                                 <div id="disc_pt2" class="panel-collapse collapse">
@@ -208,7 +210,7 @@
                             <div class="panel panel-default">
                                 <div class="panel-heading">
                                     <h4 class="panel-title">
-                                        <a data-toggle="collapse" data-parent="#discussion_accordion" href="#disc_pt3">Lack of plasticity bias in spiking population dynamics</a>
+                                        <a data-toggle="collapse" data-parent="#discussion_accordion" href="#disc_pt3">Compensatory mechanisms rely upon most-efficient existing anatomical substrates</a>
                                     </h4>
                                 </div>
                                 <div id="disc_pt3" class="panel-collapse collapse">
@@ -228,13 +230,13 @@
                         <h3>Methods</h3>
                         <!-- Methods: Tabbed -->
                         <ul class="nav nav-tabs">
-                            <li><a data-toggle="tab"; href="#setup_tab">Animals & Behavior</a></li>
+                            <li class="active"><a data-toggle="tab"; href="#setup_tab">Animals & Behavior</a></li>
                             <li><a data-toggle="tab"; href="#vidscore_tab">Video Scoring</a></li>
-                            <li class="active"><a data-toggle="tab"; href="#spikes_tab">Single-Channel MUA</a></li>
+                            <li><a data-toggle="tab"; href="#spikes_tab">Single-Channel MUA</a></li>
                         </ul> 
                         <div class="tab-content">
                             <!-- Methods: Animals & Behavior -->
-                            <div class="tab-pane fade"; id="setup_tab">
+                            <div class="tab-pane fade in active"; id="setup_tab">
                                 <div class="col-sm-2">
                                     <ul class="nav nav-pills nav-stacked">
                                         <li class="active"><a data-toggle="tab"; href="#setup_subtab1">Animals</a></li>
@@ -293,7 +295,7 @@
                                 </div>
                             </div>
                             <!-- Methods: Spikes Analyses -->
-                            <div class="tab-pane fade in active"; id="spikes_tab">
+                            <div class="tab-pane fade"; id="spikes_tab">
                                 <div class="col-sm-2">
                                     <ul class="nav nav-pills nav-stacked">
                                         <li class="active"><a data-toggle="tab"; href="#spikem_main">Overview</a></li>
