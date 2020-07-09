@@ -1,330 +1,378 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en-US">
 <head>
     <title> RC-Project </title>
     <meta charset="utf-8">
-    <meta name="viewport"; content="width=device-width, initial-scale=1">
+    <meta name="viewport"; content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description"; content="Data Visualization">
     <meta name="keywords"; content="RC, Rat Reaching, Rehabilitation, Preclinical Studies, Neurophysiology, Motor Cortex">
     <meta name="author"; content="Max Murphy">
+    
     <!-- Favicon -->
-    <link rel="icon"; href="https://media.githubusercontent.com/media/m053m716/RC-Data/master/images/Rat_Skull_Icon.png">
-    <!-- Bootstrap Layout css -->
-    <link rel="stylesheet"; href="bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="icon"; 
+          href="https://media.githubusercontent.com/media/m053m716/RC-Data/master/images/Rat_Skull_Icon.png";
+          type="image/png";>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet"; 
+          href="sources/bootstrap/dist/css/bootstrap.css";
+          type="text/css";>
     <!-- Custom Style css -->
-    <link rel="stylesheet"; href="styles/main_styles.css">
-    <link rel="stylesheet"; href="styles/main_fonts.css">
-    <link rel="stylesheet"; href="styles/main_header_menu.css">
-    <link rel="stylesheet"; href="styles/main_containers.css">
-    <link rel="stylesheet"; href="styles/main_sub_menu.css">
-    <!-- Bootstrap Layout js -->
-    <script src="libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet"; 
+          href="styles/rc-fonts.css";
+          type="text/css";>
+    <link rel="stylesheet"; 
+          href="styles/rc-styles.css";
+          type="text/css";>
+    
+    <!-- START: javascript (for Bootstrap layout elements) -->
+    <script src="sources/jquery/dist/jquery.slim.min.js"; 
+            type="text/javascript";>
+    </script>
+    <script src="sources/bootstrap/dist/js/bootstrap.min.js";
+            type="text/javascript";>
+    </script>
+    <!-- END: javascript (for Bootstrap layout elements) -->
+    
+    <!-- START: Custom javascript for events -->
+    <script type="text/javascript">
+        document.getElementById("myBtn").addEventListener("click", displayDate);
+
+        function displayDate() {
+          document.getElementById("demo").innerHTML = Date();
+        }
+    </script>
+    <!-- END: Custom javascript for events -->
 </head>
     
-<body class="main">
-    <!-- Add "floating" header/navbar that is always there, but on small screens, collapses -->
-    <nav class="navbar navbar-inverse">
-        <div class="container-fluid">
-            <div class="navbar-header">
-                <button type="button"; class="navbar-toggle"; data-toggle="collapse"; data-target="#section_navbar">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand"; href="#">RC-Project</a>
-            </div>
-        </div>
-        
-        <!-- Define collapsible navbar here -->
-        <div class="collapse navbar-collapse"; id="section_navbar">
-            <ul class="nav navbar-nav">
-                <li class="active"><a data-toggle="tab"; data-target="#abstract">Abstract</a></li>
-                <li class="dropdown"><a class="dropdown-toggle"; data-toggle="dropdown"; href="#">Data<span class="caret"></span></a>
-                    <ul class="dropdown-menu">
-                        <li><a data-toggle="tab"; data-target="#data_overview">Overview</a></li>
-                        <li><a data-toggle="tab"; data-target="#data_results">Results</a></li>
-                    </ul>
-                </li>
-                <li><a data-toggle="tab"; data-target="#discussion">Discussion</a></li>
-                <li><a data-toggle="tab"; data-target="#methods">Methods</a></li>
-            </ul>
-            <ul class="nav navbar-nav navbar-right">
-                <li><a href="#authorsModal"; data-toggle="modal">Authors</a></li>
-                <li><a href="mailto:max.murphy11@gmail.com"><span class="glyphicon glyphicon-envelope"></span></a></li>
-            </ul>
-            
-            <!-- Define modal dialog box with austor info -->
-            <div class="modal fade"; role="dialog"; id="authorsModal">
-                <div class="modal-dialog">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <button type="button"; class="close"; data-dismiss="modal">&times;</button>
-                            <h3 class="modal-title">About</h3>
-                        </div>
-                        <div class="modal-body">
-                            <h4>Working Title</h4>
-                            <p>*Task-Related Neural Activity Following Primary Motor Cortical Ischemia in Rats</p>
-                            <h4>Authors</h4>
-                            <p>Andrea Pack**, Max Murphy**, Scott Barbay, Randolph Nudo, & David Guggenmos</p>
-                            <h4>Notes</h4>
-                            <p>*Work-in-progress</p>
-                            <p>**Equal first-author contribution</p>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button"; class="btn btn-default"; data-dismiss="modal">Close</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>        
-    </nav>
+<body>
     
-    <!-- main body contents below -->
-    <div class="container container-fluid container-fluid-body"> 
-        <div class="row row-main"; id="body_row">
-            <div class="container container-fluid container-fluid-main"; id="body_grid_container">              
-                <!-- "Main" Navigation Tabs: Contents -->
-                <div class="tab tab-content tab-content-main"; id="section_display">
-                    
-                    <!-- Abstract -->
-                    <div class="tab tab-pane tab-pane-main fade in active"; id="abstract">
-                        <h3>Abstract</h3>
-                        <h4>Background</h4>
-                            <p class="abstract">
-                                Acquired injuries to primary motor cortex (M1) contribute to motor impairment and disability.  Functional recovery is predicated on the reorganization of spared areas, which has been demonstrated through post-injury plasticity in cortical motor map representations and neuroanatomical projection and termination patterns.
-                            </p>
-                        <h4>Objective</h4>
-                            <p class="abstract">
-                                The purpose of this study was to understand how neurophysiological outputs of spared motor areas relate to motor recovery of a skilled reach task following an ischemic infarct to M1.
-                            </p>
-                        <h4>Method</h4>
-                            <p class="abstract">
-                                We examined changes in extracellularly-recorded single-unit activity within ipsilesional pre-motor (PM) and contralesional M1 cortices of rats during a behavioral task after a unilateral ischemic injury to ipsilesional M1. <a href="#methods"; data-toggle="pill"; style="font-weight:bold">Details.</a>
-                            </p> 
-                        <h4>Result</h4>
-                            <p class="abstract">
-                                These data show a shift in neuronal firing patterns in the contralateral PM and ipsilateral M1 during behavioral recovery in injured rats compared to a non-injured control group, suggesting that spike-timing properties are altered in specific phases of the task, and that this altered activity supports the ability to re-acquire functional motor behaviors after stroke. <a href="#data_results"; data-toggle="pill"; style="font-weight:bold">Details.</a>
-                            </p>
-                    </div>
-                
-                    <!-- Data sub-tab: Overview -->
-                    <div class="tab-pane tab-pane-main fade"; id="data_overview";>
-                        <h3>Overview</h3>
-                        <iframe class="storyframe"; name="storyboard_rates_display"; src="Figures/Storyboard_Rates.html"; id="storyboard_rates_iframe"></iframe>
-                    </div>
-                
-                    <!-- Data sub-tab: Results -->
-                    <div class="tab tab-pane tab-pane-main fade"; id="data_results">
-                        <!-- Results/Stats -->
-                        <h3>Results</h3>
-                        <div class="panel-group"; id="results_accordion">
-                            <div class="panel panel-default">
-                                <div class="panel-heading">
-                                    <h4 class="panel-title">
-                                        <a data-toggle="collapse"; data-parent="#results_accordion"; href="#results_1">Reach duration decreases as rats recover.</a>
-                                    </h4>
-                                </div>
-                                <div id="results_1"; class="panel-collapse collapse">
-                                    <div class="panel-body"; style="width:100%;height:100%">
-                                        <iframe class="figholder"; src="Results/Trial_Durations.html"></iframe>  
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="panel panel-default">
-                                <div class="panel-heading">
-                                    <h4 class="panel-title">
-                                        <a data-toggle="collapse"; data-parent="#results_accordion"; href="#results_2">
-                                            Single-Channel Multi-Unit Spiking Dynamics demonstrate weaker trends.
-                                        </a>
-                                    </h4>
-                                </div>
-                                <div id="results_2"; class="panel-collapse collapse">
-                                    <div class="panel-body"; style="width:100%;height:100%">
-                                        <iframe class="figholder"; src="Results/Single_Channel_Stats.html"></iframe>  
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="panel panel-default">
-                                <div class="panel-heading">
-                                    <h4 class="panel-title">
-                                        <a data-toggle="collapse"; data-parent="#results_accordion"; href="#results_3">
-                                            Changes in Population Dynamics are most-evident during <strong>post-op days 8-15</strong>.
-                                        </a>
-                                    </h4>
-                                </div>
-                                <div id="results_3"; class="panel-collapse collapse"; style="width:100%;height:100%">
-                                    <div class="panel-body"; style="width:100%;height:100%">
-                                        <iframe class="resultsframe"; src="Methods/Rotatory_Distributions.html"></iframe>  
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="panel panel-default">
-                                <div class="panel-heading">
-                                    <h4 class="panel-title">
-                                        <a data-toggle="collapse"; data-parent="#results_accordion"; href="#results_4">
-                                            Control system dynamics are restored by 3-4 weeks after injury.
-                                        </a>
-                                    </h4>
-                                </div>
-                                <div id="results_4"; class="panel-collapse collapse"; style="width:100%;height:100%">
-                                    <div class="panel-body"; style="width:100%;height:100%">
-                                        <iframe class="resultsframe"; src="Results/Population_Dynamics_Stats.html"></iframe>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                
-                    <!-- Discussion -->
-                    <div class="tab-pane tab-pane-main fade"; id="discussion";>
-                        <h3>Discussion</h3>
-                        <div class="panel-group" id="discussion_accordion">
-                            <div class="panel panel-default">
-                                <div class="panel-heading">
-                                    <h4 class="panel-title">
-                                        <a data-toggle="collapse"; data-parent="#discussion_accordion"; href="#disc_pt1">Multi-unit spiking does not differentiate ischemic and intact rats at the level of single-channel spiking activity.</a>
-                                    </h4>
-                                </div>
-                                <div id="disc_pt1" class="panel-collapse collapse">
-                                    <div class="panel-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-                                        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                                        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="panel panel-default">
-                                <div class="panel-heading">
-                                    <h4 class="panel-title">
-                                        <a data-toggle="collapse" data-parent="#discussion_accordion" href="#disc_pt2">Plasticity is most-evident in structured changes to population dynamics with time.</a>
-                                    </h4>
-                                </div>
-                                <div id="disc_pt2" class="panel-collapse collapse">
-                                    <div class="panel-body">
-                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-                                        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                                        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="panel panel-default">
-                                <div class="panel-heading">
-                                    <h4 class="panel-title">
-                                        <a data-toggle="collapse" data-parent="#discussion_accordion" href="#disc_pt3">Compensatory mechanisms rely upon most-efficient existing anatomical substrates</a>
-                                    </h4>
-                                </div>
-                                <div id="disc_pt3" class="panel-collapse collapse">
-                                    <div class="panel-body">
-                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-                                        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                                        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                                    </div>
-                                </div>
-                            </div>
-                        </div> 
-                    </div>
-                
-                    <!-- Methods -->
-                    <div class="tab-pane tab-pane-main fade"; id="methods">
-                        
-                        <h3>Methods</h3>
-                        <!-- Methods: Tabbed -->
-                        <ul class="nav nav-tabs">
-                            <li class="active"><a data-toggle="tab"; href="#setup_tab">Animals & Behavior</a></li>
-                            <li><a data-toggle="tab"; href="#vidscore_tab">Video Scoring</a></li>
-                            <li><a data-toggle="tab"; href="#spikes_tab">Single-Channel MUA</a></li>
-                        </ul> 
-                        <div class="tab-content">
-                            <!-- Methods: Animals & Behavior -->
-                            <div class="tab-pane fade in active"; id="setup_tab">
-                                <div class="col-sm-2">
-                                    <ul class="nav nav-pills nav-stacked">
-                                        <li class="active"><a data-toggle="tab"; href="#setup_subtab1">Animals</a></li>
-                                        <li><a data-toggle="tab"; href="#setup_subtab2">Behavioral Training</a></li>
-                                        <li><a data-toggle="tab"; href="#setup_subtab3">Surgical Procedures</a></li>
-                                        <li><a data-toggle="tab"; href="#setup_subtab4">Motor Maps</a></li>
-                                        <li><a data-toggle="tab"; href="#setup_subtab5">Focal Ischemia</a></li>
-                                        <li><a data-toggle="tab"; href="#setup_subtab6">Electrode Implants</a></li>
-                                        <li><a data-toggle="tab"; href="#setup_subtab7">Data Acquisition</a></li>
-                                        <li><a data-toggle="tab"; href="#setup_subtab8">Histology</a></li>
-                                    </ul>
-                                </div>
-                                <div class="col-sm-10">
-                                    <div class="tab-content"; style="width:100%;height:100%">
-                                        <!-- Animals sub-pane -->
-                                        <div class="tab-pane fade in active"; id="setup_subtab1"; style="width:100%;height:100%">
-                                            <iframe class="methodsframe"; src="Methods/Animals.html"></iframe>
-                                        </div>
-                                        <!-- Behavioral Training sub-pane -->
-                                        <div class="tab-pane fade"; id="setup_subtab2"; style="width:100%;height:100%">
-                                            <iframe class="methodsframe"; src="Methods/Behavioral_Training.html"></iframe>
-                                        </div>
-                                        <!-- Surgical Procedures sub-pane -->
-                                        <div class="tab-pane fade"; id="setup_subtab3"; style="width:100%;height:100%">
-                                            <iframe class="methodsframe"; src="Methods/Surgery.html"></iframe>
-                                        </div>
-                                        <!-- Motor Maps sub-pane -->
-                                        <div class="tab-pane fade"; id="setup_subtab4"; style="width:100%;height:100%">
-                                            <iframe class="methodsframe"; src="Methods/Motor_Maps.html"></iframe>
-                                        </div>
-                                        <!-- Focal Ischemia sub-pane -->
-                                        <div class="tab-pane fade"; id="setup_subtab5"; style="width:100%;height:100%">
-                                            <iframe class="methodsframe"; src="Methods/Focal_Ischemia.html"></iframe>
-                                        </div>
-                                        <!-- Electrode Implants sub-pane -->
-                                        <div class="tab-pane fade"; id="setup_subtab6"; style="width:100%;height:100%">
-                                            <iframe class="methodsframe"; src="Methods/Electrode_Implants.html"></iframe>
-                                        </div>
-                                        <!-- Data Acquisition sub-pane -->
-                                        <div class="tab-pane fade"; id="setup_subtab7"; style="width:100%;height:100%">
-                                            <iframe class="methodsframe"; src="Methods/Data_Acquisition.html"></iframe>
-                                        </div>
-                                        <!-- Histology sub-pane -->
-                                        <div class="tab-pane fade"; id="setup_subtab8"; style="width:100%;height:100%">
-                                            <iframe class="methodsframe"; src="Methods/Histology.html"></iframe>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- Methods: Video Analyses -->
-                            <div class="tab-pane fade"; id="vidscore_tab">
-                                <div class="col-sm-2">
-                                </div>
-                                <div class="col-sm-10">
-                                    <iframe class="methodsframe"; src="Methods/Video_Scoring.html"; id="video_scoring_iframe"></iframe>
-                                </div>
-                            </div>
-                            <!-- Methods: Spikes Analyses -->
-                            <div class="tab-pane fade"; id="spikes_tab">
-                                <div class="col-sm-2">
-                                    <ul class="nav nav-pills nav-stacked">
-                                        <li class="active"><a data-toggle="tab"; href="#spikem_main">Overview</a></li>
-                                        <li><a data-toggle="tab"; href="#spikem_single_channels">Multi-Unit Activity: Single-Channels</a></li>
-                                        <li><a data-toggle="tab"; href="#spikem_population_dynamics">Multi-Unit Activity: Population Dynamics</a></li>
-                                    </ul>
-                                </div>
-                                <div class="col-sm-10">
-                                    <div class="tab-content"; style="width:100%;height:100%">
-                                        <!--Spike analyses overview sub-pane -->
-                                        <div class="tab-pane fade in active"; id="spikem_main"; style="width:100%;height:100%">
-                                            <iframe class="methodsframe"; src="Methods/Spike_Analyses.html"></iframe>
-                                        </div>
-                                        <!-- Single-channel sub-pane -->
-                                        <div class="tab-pane fade"; id="spikem_single_channels"; style="width:100%;height:100%">
-                                            <iframe class="methodsframe"; src="Methods/Spike_Analyses_Single_Channels.html"></iframe>
-                                        </div>
-                                        <!-- Population Dynamics sub-pane -->
-                                        <div class="tab-pane fade"; id="spikem_population_dynamics"; style="width:100%;height:100%">
-                                            <iframe class="methodsframe"; src="Methods/Spike_Analyses_Population_Dynamics.html"></iframe>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+    <!-- START: Modal with Author info -->
+    <div class="modal fade"; role="dialog"; id="authorsModal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button"; class="close"; data-dismiss="modal">&times;</button>
+                    <h3 class="modal-title">About</h3>
+                </div>
+                <div class="modal-body">
+                    <h4>Working Title</h4>
+                    <p>*Dynamic neural restructuring after stroke.</p>
+                    <h4>Authors</h4>
+                    <p>Andrea Pack**, Max Murphy**, Scott Barbay, Randolph Nudo, & David Guggenmos</p>
+                    <h4>Notes</h4>
+                    <p>*Work-in-progress</p>
+                    <p>**Equal first-author contribution</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button"; class="btn btn-default"; data-dismiss="modal">Close</button>
                 </div>
             </div>
         </div>
     </div>
+    <!-- END: Modal with Author info  -->
+    
+    <!-- START: Navigation bar -->
+    <nav class="navbar navbar-inverse";id="section_navbar";height="64px";role="navigation"> 
+        <ul class="nav nav-pills">
+            <li>
+                <a class="btn active"; role="button"; data-target="#collapsible_menu"; data-toggle="collapse"; aria-expanded="false"; aria-controls="collapsible_menu">
+                    <span class="glyphicon glyphicon-menu-hamburger";aria-hidden="true"></span>
+                </a>
+            </li>
+            <li>
+                <a class="navbar-brand"; href="#">Dynamic neural restructuring after stroke.</a>
+            </li>
+            <li role="presentation">
+                <a href="#authorsModal"; data-toggle="modal"><span class="glyphicon glyphicon-user" aria-hidden="true"></span></a>
+            </li>
+            <li role="presentation">
+                <a href="mailto:max.murphy11@gmail.com"><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span></a>
+            </li>
+        </ul> 
+        <!-- START: Collapsible tab links -->
+        <div id="collapsible_menu"; class="collapse">
+            <ul class="nav nav-pills">
+                <li class="active"; role="presentation">
+                    <a data-toggle="pill"; data-target="#abstract">Abstract</a>
+                </li>
+                <li class="dropdown"; role="presentation">
+                    <a class="dropdown-toggle"; data-toggle="dropdown"; href="#"; role="button"; 
+                       aria-haspopup="true"; aria-expanded="false"; id="data_dropdown_button">Data</a>
+                    <ul class="dropdown-menu"; id="data_dropdown"; aria-labelledby="data_dropdown_button">
+                        <li><a class="dropdown-item"; data-toggle="pill"; data-target="#data_overview">Overview</a></li>
+                        <li><a class="dropdown-item"; data-toggle="pill"; data-target="#data_results">Results</a></li>
+                    </ul>
+                </li>
+                <li role="presentation">
+                    <a data-toggle="pill"; data-target="#discussion">Discussion</a>
+                </li>
+                <li role="presentation">
+                    <a data-toggle="pill"; data-target="#methods">Methods</a>
+                </li>
+            </ul>
+        </div>
+        <!-- END: Collapsible tab links -->
+    </nav>    
+    <!-- END: Navigation bar -->
+    
+    <!-- START: Main contents -->
+    <div id="main"; class="tab-content">           
+        <!-- Abstract -->
+        <div id="abstract"; class="tab-pane fade active in">
+            <h3>Abstract</h3>
+            <h4>Background</h4>
+                <p class="abstract">
+                    Acquired injuries to primary motor cortex (M1) contribute to motor impairment and disability.  Functional recovery is predicated on the reorganization of spared areas, which has been demonstrated through post-injury plasticity in cortical motor map representations and neuroanatomical projection and termination patterns.
+                </p>
+            <h4>Objective</h4>
+                <p class="abstract">
+                    The purpose of this study was to understand how neurophysiological outputs of spared motor areas relate to motor recovery of a skilled reach task following an ischemic infarct to M1.
+                </p>
+            <h4>Method</h4>
+                <p class="abstract">
+                    We examined changes in extracellularly-recorded single-unit activity within ipsilesional pre-motor (PM) and contralesional M1 cortices of rats during a behavioral task after a unilateral ischemic injury to ipsilesional M1. 
+                    <a data-toggle="tab" data-target="#methods"; style="font-weight:bold">Details.</a>
+                </p> 
+            <h4>Result</h4>
+                <p class="abstract">
+                    These data show a shift in neuronal firing patterns in the contralateral PM and ipsilateral M1 during behavioral recovery in injured rats compared to a non-injured control group, suggesting that spike-timing properties are altered in specific phases of the task, and that this altered activity supports the ability to re-acquire functional motor behaviors after stroke. 
+                    <a data-target="#data_results"; data-toggle="tab"; style="font-weight:bold">Details.</a>
+                </p>
+        </div>
+        <!-- Data sub-tab: Overview -->
+        <div id="data_overview"; class="tab-pane fade"; style="height:inherit">
+            <h3>Overview</h3>
+            <iframe class="embedded"; src="Figures/Storyboard_Rates.html"></iframe>
+        </div>
+        <!-- Data sub-tab: Results -->
+        <div id="data_results"; class="tab-pane fade">
+            <h3>Results</h3>
+            <div class="panel-group"; id="results_accordion">
+                <!-- Results: Panel 1 Container (Reach Duration) -->
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a data-toggle="collapse"; data-parent="#results_accordion"; href="#results_1">Reach duration decreases as rats recover.</a>
+                        </h4>
+                    </div>
+                    <div id="results_1"; class="panel-collapse collapse">
+                        <div class="panel-body"; style="width:100%;height:100%">
+                            <iframe class="embedded"; src="Results/Trial_Durations.html"></iframe>  
+                        </div>
+                    </div>
+                </div>
+                <!-- Results: Panel 2 Container (Unit Activity) -->
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a data-toggle="collapse"; data-parent="#results_accordion"; href="#results_2">
+                                Single-Channel Multi-Unit Spiking Dynamics demonstrate weaker trends.
+                            </a>
+                        </h4>
+                    </div>
+                    <div id="results_2"; class="panel-collapse collapse">
+                        <div class="panel-body"; style="width:100%;height:100%">
+                            <iframe class="embedded"; src="Results/Single_Channel_Stats.html"></iframe>  
+                        </div>
+                    </div>
+                </div>
+                <!-- Results: Panel 3 Container (Population Dynamics 1) -->
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a data-toggle="collapse"; data-parent="#results_accordion"; href="#results_3">
+                                Changes in Population Dynamics are most-evident during <strong>post-op days 8-15</strong>.
+                            </a>
+                        </h4>
+                    </div>
+                    <div id="results_3"; class="panel-collapse collapse"; style="width:100%;height:100%">
+                        <div class="panel-body"; style="width:100%;height:100%">
+                            <iframe class="embedded"; src="Methods/Rotatory_Distributions.html"></iframe>  
+                        </div>
+                    </div>
+                </div>
+                <!-- Results: Panel 4 Container (Population Dynamics 2) -->
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a data-toggle="collapse"; data-parent="#results_accordion"; href="#results_4">
+                                Control system dynamics are restored by 3-4 weeks after injury.
+                            </a>
+                        </h4>
+                    </div>
+                    <div id="results_4"; class="panel-collapse collapse"; style="width:100%;height:100%">
+                        <div class="panel-body"; style="width:100%;height:100%">
+                            <iframe class="embedded"; src="Results/Population_Dynamics_Stats.html"></iframe>
+                        </div>
+                    </div>
+                </div>
+                <!-- Results: Panel 5 Container (Population Dynamics 3) -->
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a data-toggle="collapse"; data-parent="#results_accordion"; href="#results_5">
+                                Exemplar rotatory dynamics videos.
+                            </a>
+                        </h4>
+                    </div>
+                    <div id="results_5"; class="panel-collapse collapse"; style="width:100%;height:100%">
+                        <div class="panel-body"; style="width:100%;height:100%">
+                            <iframe class="embedded"; src="Results/Exemplar_Videos.html"></iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Discussion -->
+        <div id="discussion"; class="tab-pane fade">
+            <div id="discussion_accordion"; class="panel-group"; style="vertical-align:top;align-self:flex-start;align-content:flex-start">
+                <h3>Discussion</h3>
+                <!-- Discussion-Point: 1 Container -->
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a data-toggle="collapse"; data-parent="#discussion_accordion"; href="#disc_pt1">Multi-unit spiking does not differentiate ischemic and intact rats at the level of single-channel spiking activity.</a>
+                        </h4>
+                    </div>
+                    <div id="disc_pt1" class="panel-collapse collapse">
+                        <div class="panel-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+                            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                        </div>
+                    </div>
+                </div>
+                <!-- Discussion-Point: 2 Container -->
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a data-toggle="collapse" data-parent="#discussion_accordion" href="#disc_pt2">Plasticity is most-evident in structured changes to population dynamics with time.</a>
+                        </h4>
+                    </div>
+                    <div id="disc_pt2" class="panel-collapse collapse">
+                        <div class="panel-body">
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+                            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                        </div>
+                    </div>
+                </div>
+                <!-- Discussion-Point: 3 Container -->
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a data-toggle="collapse" data-parent="#discussion_accordion" href="#disc_pt3">Compensatory mechanisms rely upon most-efficient existing anatomical substrates</a>
+                        </h4>
+                    </div>
+                    <div id="disc_pt3" class="panel-collapse collapse">
+                        <div class="panel-body">
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+                            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                        </div>
+                    </div>
+                </div>
+            </div> 
+        </div>
+        <!-- Methods -->
+        <div id="methods"; class="tab-pane fade">
+
+            <h3>Methods</h3>
+            <!-- Methods: Tabbed -->
+            <ul class="nav nav-pills">
+                <li class="active"><a data-toggle="tab"; href="#setup_tab">Animals & Behavior</a></li>
+                <li><a data-toggle="tab"; href="#vidscore_tab">Video Scoring</a></li>
+                <li><a data-toggle="tab"; href="#spikes_tab">Single-Channel MUA</a></li>
+            </ul> 
+            <div class="tab-content">
+                <!-- Methods: Animals & Behavior -->
+                <div class="tab-pane fade in active"; id="setup_tab">
+                    <!-- Methods: Animals & Behavior [Navigation] -->
+                    <div class="col-sm-2">
+                        <ul class="nav nav-pills nav-stacked">
+                            <li class="active"><a data-toggle="tab"; data-target="#setup_subtab1">Animals</a></li>
+                            <li><a data-toggle="tab"; data-target="#setup_subtab2">Behavioral Training</a></li>
+                            <li><a data-toggle="tab"; data-target="#setup_subtab3">Surgical Procedures</a></li>
+                            <li><a data-toggle="tab"; data-target="#setup_subtab4">Motor Maps</a></li>
+                            <li><a data-toggle="tab"; data-target="#setup_subtab5">Focal Ischemia</a></li>
+                            <li><a data-toggle="tab"; data-target="#setup_subtab6">Electrode Implants</a></li>
+                            <li><a data-toggle="tab"; data-target="#setup_subtab7">Data Acquisition</a></li>
+                            <li><a data-toggle="tab"; data-target="#setup_subtab8">Histology</a></li>
+                        </ul>
+                    </div>
+                    <!-- Methods: Animals & Behavior [Content] -->
+                    <div class="col-sm-10">
+                        <div class="tab-content"; style="width:100%;height:100%">
+                            <!-- Animals sub-pane -->
+                            <div class="tab-pane fade in active"; id="setup_subtab1"; style="width:100%;height:100%">
+                                <iframe class="embedded"; src="Methods/Animals.html"></iframe>
+                            </div>
+                            <!-- Behavioral Training sub-pane -->
+                            <div class="tab-pane fade"; id="setup_subtab2"; style="width:100%;height:100%">
+                                <iframe class="embedded"; src="Methods/Behavioral_Training.html"></iframe>
+                            </div>
+                            <!-- Surgical Procedures sub-pane -->
+                            <div class="tab-pane fade"; id="setup_subtab3"; style="width:100%;height:100%">
+                                <iframe class="embedded"; src="Methods/Surgery.html"></iframe>
+                            </div>
+                            <!-- Motor Maps sub-pane -->
+                            <div class="tab-pane fade"; id="setup_subtab4"; style="width:100%;height:100%">
+                                <iframe class="embedded"; src="Methods/Motor_Maps.html"></iframe>
+                            </div>
+                            <!-- Focal Ischemia sub-pane -->
+                            <div class="tab-pane fade"; id="setup_subtab5"; style="width:100%;height:100%">
+                                <iframe class="embedded"; src="Methods/Focal_Ischemia.html"></iframe>
+                            </div>
+                            <!-- Electrode Implants sub-pane -->
+                            <div class="tab-pane fade"; id="setup_subtab6"; style="width:100%;height:100%">
+                                <iframe class="embedded"; src="Methods/Electrode_Implants.html"></iframe>
+                            </div>
+                            <!-- Data Acquisition sub-pane -->
+                            <div class="tab-pane fade"; id="setup_subtab7"; style="width:100%;height:100%">
+                                <iframe class="embedded"; src="Methods/Data_Acquisition.html"></iframe>
+                            </div>
+                            <!-- Histology sub-pane -->
+                            <div class="tab-pane fade"; id="setup_subtab8"; style="width:100%;height:100%">
+                                <iframe class="embedded"; src="Methods/Histology.html"></iframe>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Methods: Video Analyses -->
+                <div class="tab-pane fade"; id="vidscore_tab">
+                    <iframe class="embedded"; src="Methods/Video_Scoring.html"; id="video_scoring_iframe"></iframe>
+                </div>
+                <!-- Methods: Spikes Analyses -->
+                <div class="tab-pane fade"; id="spikes_tab">
+                    <!-- Methods: Spikes Analyses [Navigation] -->
+                    <div class="col-sm-2">
+                        <ul class="nav nav-pills nav-stacked">
+                            <li class="active"><a data-toggle="tab"; href="#spikem_main">Overview</a></li>
+                            <li><a data-toggle="tab"; href="#spikem_single_channels">Multi-Unit Activity: Single-Channels</a></li>
+                            <li><a data-toggle="tab"; href="#spikem_population_dynamics">Multi-Unit Activity: Population Dynamics</a></li>
+                        </ul>
+                    </div>
+                    <!-- Methods: Spikes Analyses [Content] -->
+                    <div class="col-sm-10">
+                        <div class="tab-content"; style="width:100%;height:100%">
+                            <!--Spike analyses overview sub-pane -->
+                            <div class="tab-pane fade in active"; id="spikem_main"; style="width:100%;height:100%">
+                                <iframe class="embedded"; src="Methods/Spike_Analyses.html"></iframe>
+                            </div>
+                            <!-- Single-channel sub-pane -->
+                            <div class="tab-pane fade"; id="spikem_single_channels"; style="width:100%;height:100%">
+                                <iframe class="embedded"; src="Methods/Spike_Analyses_Single_Channels.html"></iframe>
+                            </div>
+                            <!-- Population Dynamics sub-pane -->
+                            <div class="tab-pane fade"; id="spikem_population_dynamics"; style="width:100%;height:100%">
+                                <iframe class="embedded"; src="Methods/Spike_Analyses_Population_Dynamics.html"></iframe>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
 </body>
 </html>

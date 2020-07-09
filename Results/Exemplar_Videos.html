@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Exemplar Videos</title>
+    <meta name="viewport"; content="width=device-width, initial-scale=1">
+    <meta name="description"; content="Electrode placement and recording schedule">
+    <meta name="keywords"; content="RC, Rat Reaching, Rehabilitation, Preclinical Studies, ICMS, Motor Cortex, Videos">
+    <meta name="author"; content="Max Murphy">
+    <!-- Favicon -->
+    <link rel="icon"; 
+          href="https://media.githubusercontent.com/media/m053m716/RC-Data/master/images/Rat_Skull_Icon.png"; 
+          type="image/png">
+    <!-- Imported Styles -->
+    <link rel="stylesheet"; 
+          href="../sources/video.js/dist/video-js.min.css";
+          type="text/css">
+    <link rel="stylesheet"; 
+          href="../sources/videojs-playlist-ui/dist/videojs-playlist-ui.vertical.css";
+          type="text/css">
+    <link rel="stylesheet";
+          href="../sources/bootstrap/dist/css/bootstrap.min.css";
+          type="text/css">
+    <!-- Custom Style css -->
+    <link rel="stylesheet"; 
+          href="../styles/rc-fonts.css";
+          type="text/css">
+    <link rel="stylesheet"; 
+          href="../styles/rc-styles.css";
+          type="text/css">    
+</head>
+
+<body> 
+    <div class="row player-container" style="width:100%;max-height:500px">
+        <div class="col-sm-9" style="max-width:650px;height:100%;max-height:inherit">
+            <video-js id="vidPlayer" style="min-width:300px;min-height:300px;max-width:inherit;max-height:inherit">
+                <source src="https://github.com/m053m716/RC-Data/blob/master/Videos/Example_Intact_Early_1.mp4?raw=true" type="video/mp4">
+                <source src="https://github.com/m053m716/RC-Data/blob/master/Videos/Example_Intact_Late_1.mp4?raw=true" type="video/mp4">
+                <source src="https://github.com/m053m716/RC-Data/blob/master/Videos/Example_Ischemia_Early_1.mp4?raw=true" type="video/mp4">
+                <source src="https://github.com/m053m716/RC-Data/blob/master/Videos/Example_Ischemia_Middle_1.mp4?raw=true" type="video/mp4">
+                <source src="https://github.com/m053m716/RC-Data/blob/master/Videos/Example_Ischemia_Late_1.mp4?raw=true" type="video/mp4">
+            </video-js> 
+        </div>
+        <div class="col-sm-3 vjs-playlist" style="max-width:200px;height:100%;max-height:inherit"></div> 
+    </div>
+
+    
+    <!-- Video-Related Javascripts -->
+    <script src="../sources/video.js/dist/video.js"; 
+            type="text/javascript">
+    </script>
+    <script src="../sources/videojs-playlist/dist/videojs-playlist.js";
+            type="text/javascript">
+    </script>
+    <script src="../sources/videojs-playlist-ui/dist/videojs-playlist-ui.js";
+            type="text/javascript">
+    </script>
+    <script type="text/javascript">
+        var player = videojs("vidPlayer", {
+            controls: true, 
+            preload: "auto",
+            autoplay: true,
+            loop:"loop",
+            liveui: true,
+            responsive: true,
+            playbackRates: [0.125, 0.5, 0.75, 1, 1.25, 1.5, 2]
+        });
+        player.playlist([{
+                          name: 'Intact: Early',
+                          description: 'Intact Rat During Early Phase of Recovery',
+                          duration: 12,
+                          sources: [
+                            { src: "https://github.com/m053m716/RC-Data/blob/master/Videos/Example_Intact_Early_1.mp4?raw=true", type: 'video/mp4' },
+                          ],
+                          thumbnail:  [
+                            {
+                              src: 'https://media.githubusercontent.com/media/m053m716/RC-Data/master/images/Intact_Early_1_Frame.PNG',
+                              type: 'image/png',
+                              media: '(min-width: 64px;)'
+                            }
+                          ]
+                        }, 
+                         {
+                          name: 'Intact: Late',
+                          description: 'Intact Rat During Early Phase of Recovery',
+                          duration: 12,
+                          sources: [
+                            { src: "https://github.com/m053m716/RC-Data/blob/master/Videos/Example_Intact_Late_1.mp4?raw=true", type: 'video/mp4' },
+                          ],
+                          thumbnail: [
+                            {
+                              src: 'https://media.githubusercontent.com/media/m053m716/RC-Data/master/images/Intact_Late_1_Frame.PNG',
+                              type: 'image/png',
+                              media: '(min-width: 64px;)'
+                            }
+                          ]
+                         }, 
+                         {
+                          name: 'Ischemia: Early',
+                          description: 'Ischemic Rat During Early Phase of Recovery',
+                          duration: 12,
+                          sources: [
+                            { src: "https://github.com/m053m716/RC-Data/blob/master/Videos/Example_Ischemia_Early_1.mp4?raw=true", type: 'video/mp4' },
+                          ],
+                          thumbnail: [
+                            {
+                              src: 'https://media.githubusercontent.com/media/m053m716/RC-Data/master/images/Ischemia_Early_1_Frame.PNG',
+                              type: 'image/png',
+                              media: '(min-width: 64px;)'
+                            }
+                          ]
+                        }, 
+                         {
+                              name: 'Ischemia: Middle',
+                              description: 'Ischemic Rat During Middle Phase of Recovery',
+                              duration: 12,
+                              sources: [
+                                { src: "https://github.com/m053m716/RC-Data/blob/master/Videos/Example_Ischemia_Middle_1.mp4?raw=true", type: 'video/mp4' },
+                              ],
+                              thumbnail: [
+                                {
+                                  src: 'https://media.githubusercontent.com/media/m053m716/RC-Data/master/images/Ischemia_Middle_1_Frame.PNG',
+                                  type: 'image/png',
+                                  media: '(min-width: 64px;)'
+                                }
+                              ]
+                         }, 
+                         {
+                              name: 'Ischemia: Late',
+                              description: 'Ischemic Rat During Late Phase of Recovery',
+                              duration: 12,
+                              sources: [
+                                { src: "https://github.com/m053m716/RC-Data/blob/master/Videos/Example_Ischemia_Late_1.mp4?raw=true", type: 'video/mp4' },
+                              ],
+                              thumbnail: [
+                                {
+                                  src: 'https://media.githubusercontent.com/media/m053m716/RC-Data/master/images/Ischemia_Late_1_Frame.PNG',
+                                  type: 'image/png',
+                                  media: '(min-width: 64px;)'
+                                }
+                              ]
+                            }]);
+        // Initialize the playlist-ui plugin with no option (i.e. the defaults).
+        player.playlistUi();
+    </script>
+
+</body>
+
+</html>

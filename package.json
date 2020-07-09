@@ -1,0 +1,36 @@
+{
+  "name": "rc-data",
+  "version": "0.1.0",
+  "description": "Interactive website for hosting data from RC project",
+  "main": "index.html",
+  "dependencies": {
+    "@popperjs/core": "^2.4.4",
+    "babel": "^6.23.0",
+    "bootstrap": "^3.4.1",
+    "jquery": "^3.5.1",
+    "json": "^9.0.6",
+    "pkcs7": "^1.0.2",
+    "popper.js": "^1.16.0",
+    "video.js": "^7.8.3",
+    "videojs-playlist": "^4.3.1",
+    "videojs-playlist-ui": "^3.8.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/m053m716/RC-Data.git"
+  },
+  "keywords": [
+    "RC",
+    "rehabilitation",
+    "neurophysiology"
+  ],
+  "author": "Max Murphy",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/m053m716/RC-Data/issues"
+  },
+  "homepage": "https://github.com/m053m716/RC-Data#readme",
+  "devDependencies": {
+    "gulp-bootlint": "^1.1.0"
+  }
+}

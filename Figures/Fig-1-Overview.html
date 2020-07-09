@@ -7,19 +7,26 @@
     <meta name="description"; content="Electrode placement and recording schedule">
     <meta name="keywords"; content="RC, Rat Reaching, Rehabilitation, Preclinical Studies, ICMS, Motor Cortex, Figure 1">
     <meta name="author"; content="Max Murphy">
-    <!-- Bootstrap Layout css -->
-    <link rel="stylesheet"; href="../bootstrap/3.4.1/css/bootstrap.min.css">
+    <!-- Favicon -->
+    <link rel="icon"; 
+          href="https://media.githubusercontent.com/media/m053m716/RC-Data/master/images/Rat_Skull_Icon.png";
+          type="image/png">
     <!-- Custom Style css -->
-    <link rel="stylesheet"; href="../styles/main_fonts.css">
-    <link rel="stylesheet"; href="../styles/embedded_styles.css">
-    <!-- Bootstrap Layout js -->
-    <script src="../libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="../bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet"; 
+          href="../styles/rc-fonts.css";
+          type="text/css">
+    <link rel="stylesheet"; 
+          href="../styles/rc-styles.css";
+          type="text/css">
+    <!-- jQuery js -->
+    <script src="../sources/jquery/dist/jquery.slim.min.js"; 
+            type="text/javascript"></script>
     <!-- Tableau js -->
-    <script type="text/javascript"; src="https://public.tableau.com/javascripts/api/tableau-2.min.js"></script>
+    <script src="https://public.tableau.com/javascripts/api/tableau-2.min.js"; 
+            type="text/javascript"></script>
     <script type="text/javascript">
         function initViz() {
-            var containerDiv = document.getElementById("fig_1"),
+            var containerDiv = document.getElementById("fig_1-overview"),
             url = "https://public.tableau.com/views/RC-Project/Fig_1-Overview",
             options = {
                 height: 750,
@@ -31,10 +38,13 @@
             // Create a viz object and embed it in the container div.
             var viz = new tableau.Viz(containerDiv, url, options); 
         }
+        $(document).ready(function(){
+            initViz();
+        })
     </script>
 </head>
 
-<body class="embedded"; onload="initViz();">
-    <div id="fig_1"></div>    
+<body>
+    <div id="fig_1-overview"; style="height:750px;width:1400px"></div>    
 </body>
 </html>

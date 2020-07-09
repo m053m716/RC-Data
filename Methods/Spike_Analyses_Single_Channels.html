@@ -593,14 +593,16 @@ header, .context-menu, .megamenu-content, footer{
 
  .typora-export li, .typora-export p, .typora-export,  .footnote-line {white-space: normal;} 
 </style>
-    <!-- Bootstrap Layout css -->
-    <link rel="stylesheet"; href="../bootstrap/3.4.1/css/bootstrap.min.css">
-    
-    <!-- Bootstrap Layout js -->
-    <script src="../libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="../bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<!-- Bootstrap Layout css -->
+<link rel="stylesheet"; href="../node_modules/bootstrap/dist/css/bootstrap.css">
 </head>
+    
 <body class='typora-export os-windows' >
+<!-- START: javascript (for Bootstrap layout elements) -->
+    <script src="../node_modules/jquery/dist/jquery.slim.min.js"></script>;
+    <script src="../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>;
+<!-- END: javascript (for Bootstrap layout elements) -->
+    
 <div  id='write'  class = 'is-node'>
     
     <h1><a name="single-trial-parameter-fits" class="md-header-anchor"></a><span>Single-trial Parameter Fits</span></h1><p><span>This <a href="https://github.com/m053m716/rc-proj/tree/master/spikeAnalyses/%2Banalyze/%2Bstat"; style="font-weight:bold">package</a> contains </span><code>MATLAB</code><span> functions for two purposes:</span></p><ol start='' ><li><span>Fitting informative parameters to reduce time-series to two components</span></li><li><span>Exporting the fit components along with fit information and relevant grouping metadata in order to model the fit parameters, highlighting group differences during recovery that occur on the scale of single-channel multi-unit activity.</span></li></ol><h2><a name="overview" class="md-header-anchor"></a>
@@ -649,7 +651,7 @@ header, .context-menu, .megamenu-content, footer{
             <div class="tab-content"; style="width:100%;height:100%">
                 <!--Figure 1 sub-pane -->
                 <div class="tab-pane fade in active"; id="fig1_tab"; style="width:100%;height:100%">
-                    <p><img src="https://media.githubusercontent.com/media/m053m716/RC-Data/master/Figures/img/FMINCON_Example_High_Bandwidth__Terrible_Fit.png"; referrerpolicy="no-referrer"; title="Figure 1: Example of poor fit with Envelope Bandwidth > 10-Hz"></p>
+                    <p><img src="../images/FMINCON_Example_High_Bandwidth__Terrible_Fit.png"; referrerpolicy="no-referrer"; title="Figure 1: Example of poor fit with Envelope Bandwidth > 10-Hz"></p>
                     <p><strong><span>Figure 1: Example of poor Gaussian pulse fit.</span></strong></p>
                     <p>
                         One of the most-common parameter-based exclusions (due to lack of model fit) was when the Envelope Bandwidth converged to a value where the product of <strong><a href='#sigma'>sigma</a></strong> and <strong><a href='#omega'>omega</a></strong> exceeded 10-Hz, a value that is greater than the Nyquist Frequency given the bin width for generation of the initial spike rate histograms (60-ms). In this case, the fit (blue) captures a little bit of the modulation of the observed rate trajectory (black), but qualitatively doesn't capture the trajectory well, so such fits were excluded.
@@ -657,7 +659,7 @@ header, .context-menu, .megamenu-content, footer{
                 </div>
                 <!--Figure 2 sub-pane -->
                 <div class="tab-pane fade"; id="fig2_tab"; style="width:100%;height:100%">
-                    <p><img src="https://media.githubusercontent.com/media/m053m716/RC-Data/master/Figures/img/FMINCON_Error_Distribution.png"; referrerpolicy="no-referrer"; title="Figure 2: Distribution of Fit Errors"></p>
+                    <p><img src="../images/FMINCON_Error_Distribution.png"; referrerpolicy="no-referrer"; title="Figure 2: Distribution of Fit Errors"></p>
                     <p><strong><span>Figure 2: Distribution of fit errors.</span></strong></p>
                     <p>
                         After all <strong><a href='#exclusion_filters'>exclusion filters</a></strong> are applied to the fit parameters table, the errors are an approximately overdispersed Poisson distribution with mean of 2.1 and variance of 6.8.
@@ -665,7 +667,7 @@ header, .context-menu, .megamenu-content, footer{
                 </div>
                 <!--Figure 3 sub-pane -->
                 <div class="tab-pane fade"; id="fig3_tab"; style="width:100%;height:100%">
-                    <p><img src="https://media.githubusercontent.com/media/m053m716/RC-Data/master/Figures/img/FMINCON_Example_Good_Fit.png"; referrerpolicy="no-referrer"; title="Figure 3: Example of good model fit"></p>
+                    <p><img src="../images/FMINCON_Example_Good_Fit.png"; referrerpolicy="no-referrer"; title="Figure 3: Example of good model fit"></p>
                     <p><strong><span>Figure 3: Example of a trajectory that is well-fit by the Gaussian pulse model.</span></strong></p>
                     <p>
                         In this example, the sum of square errors is less than 1. The reconstructed trajectory (blue) capturing a majority of the observed data (black).
@@ -673,7 +675,7 @@ header, .context-menu, .megamenu-content, footer{
                 </div>
                 <!--Figure 4 sub-pane -->
                 <div class="tab-pane fade"; id="fig4_tab"; style="width:100%;height:100%">
-                    <p><img src="https://media.githubusercontent.com/media/m053m716/RC-Data/master/Figures/img/FMINCON_Example_Moderate_Fit.png"; referrerpolicy="no-referrer"; title="Figure 4: Example of good model fit"></p>
+                    <p><img src="../images/FMINCON_Example_Moderate_Fit.png"; referrerpolicy="no-referrer"; title="Figure 4: Example of good model fit"></p>
                     <p><strong><span>Figure 4: Example of a trajectory that isn't perfectly fit by the Gaussian pulse model, but still acceptable.</span></strong></p>
                     <p>
                         The reconstructed trajectory (blue) still captures the qualitative components of the observed data (black) that we were hoping to model, even with an error term that is approximately 3 times the mean error value.
@@ -681,7 +683,7 @@ header, .context-menu, .megamenu-content, footer{
                 </div>
                 <!--Figure 5 sub-pane -->
                 <div class="tab-pane fade"; id="fig5_tab"; style="width:100%;height:100%">
-                    <p><img src="https://media.githubusercontent.com/media/m053m716/RC-Data/master/Figures/img/FMINCON_Example_Poor_Fit.png"; referrerpolicy="no-referrer"; title="Figure 5: Example of poor model fit"></p>
+                    <p><img src="../images/FMINCON_Example_Poor_Fit.png"; referrerpolicy="no-referrer"; title="Figure 5: Example of poor model fit"></p>
                     <p><strong><span>Figure 5: Even relatively large error terms still capture the desired data aspects.</span></strong></p>
                     <p>
                         Toward the tail of the error distribution of the retained observations, the model (blue) still captures the data well (black).
@@ -689,7 +691,7 @@ header, .context-menu, .megamenu-content, footer{
                 </div>
                 <!--Figure 6 sub-pane -->
                 <div class="tab-pane fade"; id="fig6_tab"; style="width:100%;height:100%">
-                    <p><img src="https://media.githubusercontent.com/media/m053m716/RC-Data/master/Figures/img/FMINCON_PCA_Summary.png"; referrerpolicy="no-referrer"; title="Figure 6: Model Parameter PCA summary"></p>
+                    <p><img src="../images/FMINCON_PCA_Summary.png"; referrerpolicy="no-referrer"; title="Figure 6: Model Parameter PCA summary"></p>
                     <p><strong><span>Figure 6: PCA summary of fit model parameters.</span></strong></p>
                     <p>
                         <strong>(Top): </strong>Cumulative percent of data explained by each principal component (individual stem lines). The first three components capture approximately 90 percent of the parameter space.
