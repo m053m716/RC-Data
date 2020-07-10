@@ -35,12 +35,17 @@
             <video-js id="vidPlayer" style="min-width:300px;min-height:300px;max-width:inherit;max-height:inherit">
                 <source src="https://github.com/m053m716/RC-Data/blob/master/Videos/Example_Intact_Early_1.mp4?raw=true" type="video/mp4">
                 <source src="https://github.com/m053m716/RC-Data/blob/master/Videos/Example_Intact_Late_1.mp4?raw=true" type="video/mp4">
+                <source src="https://github.com/m053m716/RC-Data/blob/master/Videos/Example_Intact_Late_2.mp4?raw=true" type="video/mp4">
                 <source src="https://github.com/m053m716/RC-Data/blob/master/Videos/Example_Ischemia_Early_1.mp4?raw=true" type="video/mp4">
                 <source src="https://github.com/m053m716/RC-Data/blob/master/Videos/Example_Ischemia_Middle_1.mp4?raw=true" type="video/mp4">
                 <source src="https://github.com/m053m716/RC-Data/blob/master/Videos/Example_Ischemia_Late_1.mp4?raw=true" type="video/mp4">
+                <source src="https://github.com/m053m716/RC-Data/blob/master/Videos/Example_Ischemia_Middle_2.mp4?raw=true" type="video/mp4">
+                <source src="https://github.com/m053m716/RC-Data/blob/master/Videos/Example_Ischemia_Middle_2__best-1.mp4?raw=true" type="video/mp4">
+                <source src="https://github.com/m053m716/RC-Data/blob/master/Videos/Example_Ischemia_Middle_2__best-2.mp4?raw=true" type="video/mp4">
+                <source src="https://github.com/m053m716/RC-Data/blob/master/Videos/Example_Ischemia_Middle_2__best-3.mp4?raw=true" type="video/mp4">
             </video-js> 
         </div>
-        <div class="col-sm-3 vjs-playlist" style="max-width:200px;height:100%;max-height:inherit"></div> 
+        <div class="col-sm-3 vjs-playlist" style="max-width:150px;height:100%;max-height:inherit"></div> 
     </div>
 
     
@@ -59,86 +64,153 @@
             controls: true, 
             preload: "auto",
             autoplay: true,
-            loop:"loop",
-            liveui: true,
-            responsive: true,
             playbackRates: [0.125, 0.5, 0.75, 1, 1.25, 1.5, 2]
         });
-        player.playlist([{
-                          name: 'Intact: Early',
-                          description: 'Intact Rat During Early Phase of Recovery',
-                          duration: 12,
-                          sources: [
-                            { src: "https://github.com/m053m716/RC-Data/blob/master/Videos/Example_Intact_Early_1.mp4?raw=true", type: 'video/mp4' },
-                          ],
-                          thumbnail:  [
+        player.playlist([
                             {
-                              src: 'https://media.githubusercontent.com/media/m053m716/RC-Data/master/images/Intact_Early_1_Frame.PNG',
-                              type: 'image/png',
-                              media: '(min-width: 64px;)'
-                            }
-                          ]
-                        }, 
-                         {
-                          name: 'Intact: Late',
-                          description: 'Intact Rat During Early Phase of Recovery',
-                          duration: 12,
-                          sources: [
-                            { src: "https://github.com/m053m716/RC-Data/blob/master/Videos/Example_Intact_Late_1.mp4?raw=true", type: 'video/mp4' },
-                          ],
-                          thumbnail: [
-                            {
-                              src: 'https://media.githubusercontent.com/media/m053m716/RC-Data/master/images/Intact_Late_1_Frame.PNG',
-                              type: 'image/png',
-                              media: '(min-width: 64px;)'
-                            }
-                          ]
-                         }, 
-                         {
-                          name: 'Ischemia: Early',
-                          description: 'Ischemic Rat During Early Phase of Recovery',
-                          duration: 12,
-                          sources: [
-                            { src: "https://github.com/m053m716/RC-Data/blob/master/Videos/Example_Ischemia_Early_1.mp4?raw=true", type: 'video/mp4' },
-                          ],
-                          thumbnail: [
-                            {
-                              src: 'https://media.githubusercontent.com/media/m053m716/RC-Data/master/images/Ischemia_Early_1_Frame.PNG',
-                              type: 'image/png',
-                              media: '(min-width: 64px;)'
-                            }
-                          ]
-                        }, 
-                         {
-                              name: 'Ischemia: Middle',
-                              description: 'Ischemic Rat During Middle Phase of Recovery',
+                              name: 'Intact: Early',
+                              description: 'Intact Rat During Early Phase of Recovery',
                               duration: 12,
                               sources: [
-                                { src: "https://github.com/m053m716/RC-Data/blob/master/Videos/Example_Ischemia_Middle_1.mp4?raw=true", type: 'video/mp4' },
+                                { src: "https://github.com/m053m716/RC-Data/blob/master/Videos/Example_Intact_Early_1.mp4?raw=true", type: 'video/mp4' },
                               ],
-                              thumbnail: [
+                              thumbnail:  [
                                 {
-                                  src: 'https://media.githubusercontent.com/media/m053m716/RC-Data/master/images/Ischemia_Middle_1_Frame.PNG',
+                                  src: 'https://media.githubusercontent.com/media/m053m716/RC-Data/master/images/Intact_Early_1_Frame.PNG',
                                   type: 'image/png',
                                   media: '(min-width: 64px;)'
                                 }
                               ]
-                         }, 
-                         {
-                              name: 'Ischemia: Late',
-                              description: 'Ischemic Rat During Late Phase of Recovery',
+                            }, 
+                            {
+                              name: 'Intact: Late (1)',
+                              description: 'Intact Rat During Early Phase of Recovery',
                               duration: 12,
                               sources: [
-                                { src: "https://github.com/m053m716/RC-Data/blob/master/Videos/Example_Ischemia_Late_1.mp4?raw=true", type: 'video/mp4' },
+                                { src: "https://github.com/m053m716/RC-Data/blob/master/Videos/Example_Intact_Late_1.mp4?raw=true", type: 'video/mp4' },
                               ],
                               thumbnail: [
                                 {
-                                  src: 'https://media.githubusercontent.com/media/m053m716/RC-Data/master/images/Ischemia_Late_1_Frame.PNG',
+                                  src: 'https://media.githubusercontent.com/media/m053m716/RC-Data/master/images/Intact_Late_1_Frame.PNG',
                                   type: 'image/png',
                                   media: '(min-width: 64px;)'
                                 }
                               ]
-                            }]);
+},
+                            {
+                              name: 'Intact: Late (2)',
+                              description: 'Intact Rat During Late Phase of Recovery',
+                              duration: 12,
+                              sources: [
+                                { src: "https://github.com/m053m716/RC-Data/blob/master/Videos/Example_Intact_Late_2.mp4?raw=true", type: 'video/mp4' },
+                              ],
+                              thumbnail:  [
+                                {
+                                  src: 'https://media.githubusercontent.com/media/m053m716/RC-Data/master/images/Intact_Late_1_Frame.PNG',
+                                  type: 'image/png',
+                                  media: '(min-width: 64px;)'
+                                }
+                              ]}, 
+                            {
+                              name: 'Ischemia: Early',
+                              description: 'Ischemic Rat During Early Phase of Recovery',
+                              duration: 12,
+                              sources: [
+                                { src: "https://github.com/m053m716/RC-Data/blob/master/Videos/Example_Ischemia_Early_1.mp4?raw=true", type: 'video/mp4' },
+                              ],
+                              thumbnail: [
+                                {
+                                  src: 'https://media.githubusercontent.com/media/m053m716/RC-Data/master/images/Ischemia_Early_1_Frame.PNG',
+                                  type: 'image/png',
+                                  media: '(min-width: 64px;)'
+                                }
+                              ]}, 
+                            {
+                                  name: 'Ischemia: Middle (1)',
+                                  description: 'Ischemic Rat During Middle Phase of Recovery',
+                                  duration: 12,
+                                  sources: [
+                                    { src: "https://github.com/m053m716/RC-Data/blob/master/Videos/Example_Ischemia_Middle_1.mp4?raw=true", type: 'video/mp4' },
+                                  ],
+                                  thumbnail: [
+                                    {
+                                      src: 'https://media.githubusercontent.com/media/m053m716/RC-Data/master/images/Ischemia_Middle_1_Frame.PNG',
+                                      type: 'image/png',
+                                      media: '(min-width: 64px;)'
+                                    }
+                                  ]}, 
+                            {
+                                  name: 'Ischemia: Late',
+                                  description: 'Ischemic Rat During Late Phase of Recovery',
+                                  duration: 12,
+                                  sources: [
+                                    { src: "https://github.com/m053m716/RC-Data/blob/master/Videos/Example_Ischemia_Late_1.mp4?raw=true", type: 'video/mp4' },
+                                  ],
+                                  thumbnail: [
+                                    {
+                                      src: 'https://media.githubusercontent.com/media/m053m716/RC-Data/master/images/Ischemia_Late_1_Frame.PNG',
+                                      type: 'image/png',
+                                      media: '(min-width: 64px;)'
+                                    }
+                                  ]
+                                }, 
+                            {
+                                  name: 'Ischemia: Middle (2)',
+                                  description: 'Ischemic Rat During Middle Phase of Recovery',
+                                  duration: 12,
+                                  sources: [
+                                    { src: "https://github.com/m053m716/RC-Data/blob/master/Videos/Example_Ischemia_Middle_2.mp4?raw=true", type: 'video/mp4' },
+                                  ],
+                                  thumbnail: [
+                                    {
+                                      src: 'https://media.githubusercontent.com/media/m053m716/RC-Data/master/images/Ischemia_Middle_1_Frame.PNG',
+                                      type: 'image/png',
+                                      media: '(min-width: 64px;)'
+                                    }
+                                  ]},
+                            {
+                                  name: 'Ischemia: Middle (2; LS-Optimal Group 1)',
+                                  description: 'LS-Optimal Trajectories: Ischemic Rat During Middle Phase of Recovery',
+                                  duration: 12,
+                                  sources: [
+                                    { src: "https://github.com/m053m716/RC-Data/blob/master/Videos/Example_Ischemia_Middle_2__best-1.mp4?raw=true", type: 'video/mp4' },
+                                  ],
+                                  thumbnail: [
+                                    {
+                                      src: 'https://media.githubusercontent.com/media/m053m716/RC-Data/master/images/Ischemia_Middle_1_Frame.PNG',
+                                      type: 'image/png',
+                                      media: '(min-width: 64px;)'
+                                    }
+                                  ]},
+                            {
+                                  name: 'Ischemia: Middle (2; LS-Optimal Group 2)',
+                                  description: 'LS-Optimal Trajectories: Ischemic Rat During Middle Phase of Recovery',
+                                  duration: 12,
+                                  sources: [
+                                    { src: "https://github.com/m053m716/RC-Data/blob/master/Videos/Example_Ischemia_Middle_2__best-2.mp4?raw=true", type: 'video/mp4' },
+                                  ],
+                                  thumbnail: [
+                                    {
+                                      src: 'https://media.githubusercontent.com/media/m053m716/RC-Data/master/images/Ischemia_Middle_1_Frame.PNG',
+                                      type: 'image/png',
+                                      media: '(min-width: 64px;)'
+                                    }
+                                  ]},
+                            {
+                                  name: 'Ischemia: Middle (2; LS-Optimal Group 3)',
+                                  description: 'LS-Optimal Trajectories: Ischemic Rat During Middle Phase of Recovery',
+                                  duration: 12,
+                                  sources: [
+                                    { src: "https://github.com/m053m716/RC-Data/blob/master/Videos/Example_Ischemia_Middle_2__best-3.mp4?raw=true", type: 'video/mp4' },
+                                  ],
+                                  thumbnail: [
+                                    {
+                                      src: 'https://media.githubusercontent.com/media/m053m716/RC-Data/master/images/Ischemia_Middle_1_Frame.PNG',
+                                      type: 'image/png',
+                                      media: '(min-width: 64px;)'
+                                    }
+                                  ]}
+                            ]);
         // Initialize the playlist-ui plugin with no option (i.e. the defaults).
         player.playlistUi();
     </script>
