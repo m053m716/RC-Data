@@ -1,0 +1,244 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge,IE=9,chrome=1"><meta name="generator" content="MATLAB 2020b"><title>Assessment of pellet retrieval performance</title><style type="text/css">.rtcContent { padding: 30px; } .S0 { margin: 3px 10px 5px 4px; padding: 0px; line-height: 28.8px; min-height: 0px; white-space: pre-wrap; color: rgb(213, 80, 0); font-family: Helvetica, Arial, sans-serif; font-style: normal; font-size: 24px; font-weight: 400; text-align: left;  }
+.S1 { margin: 20px 10px 5px 4px; padding: 0px; line-height: 20px; min-height: 0px; white-space: pre-wrap; color: rgb(60, 60, 60); font-family: Helvetica, Arial, sans-serif; font-style: normal; font-size: 20px; font-weight: 700; text-align: left;  }
+.S2 { margin: 2px 10px 9px 4px; padding: 0px; line-height: 21px; min-height: 0px; white-space: pre-wrap; color: rgb(0, 0, 0); font-family: Helvetica, Arial, sans-serif; font-style: normal; font-size: 14px; font-weight: 400; text-align: left;  }
+.S3 { margin: 15px 10px 5px 4px; padding: 0px; line-height: 18px; min-height: 0px; white-space: pre-wrap; color: rgb(60, 60, 60); font-family: Helvetica, Arial, sans-serif; font-style: normal; font-size: 17px; font-weight: 700; text-align: left;  }
+.CodeBlock { background-color: #F7F7F7; margin: 10px 0 10px 0;}
+.S4 { border-left: 1px solid rgb(233, 233, 233); border-right: 1px solid rgb(233, 233, 233); border-top: 1px solid rgb(233, 233, 233); border-bottom: 1px solid rgb(233, 233, 233); border-radius: 4px; padding: 6px 45px 4px 13px; line-height: 17.234px; min-height: 18px; white-space: nowrap; color: rgb(0, 0, 0); font-family: Menlo, Monaco, Consolas, "Courier New", monospace; font-size: 14px;  }
+.S5 { margin: 3px 10px 5px 4px; padding: 0px; line-height: 20px; min-height: 0px; white-space: pre-wrap; color: rgb(60, 60, 60); font-family: Helvetica, Arial, sans-serif; font-style: normal; font-size: 20px; font-weight: 700; text-align: left;  }
+.S6 { margin: 10px 10px 5px 4px; padding: 0px; line-height: 18px; min-height: 0px; white-space: pre-wrap; color: rgb(60, 60, 60); font-family: Helvetica, Arial, sans-serif; font-style: normal; font-size: 15px; font-weight: 700; text-align: left;  }
+.S7 { border-left: 1px solid rgb(233, 233, 233); border-right: 1px solid rgb(233, 233, 233); border-top: 1px solid rgb(233, 233, 233); border-bottom: 0px none rgb(0, 0, 0); border-radius: 4px 4px 0px 0px; padding: 6px 45px 0px 13px; line-height: 17.234px; min-height: 18px; white-space: nowrap; color: rgb(0, 0, 0); font-family: Menlo, Monaco, Consolas, "Courier New", monospace; font-size: 14px;  }
+.S8 { border-left: 1px solid rgb(233, 233, 233); border-right: 1px solid rgb(233, 233, 233); border-top: 0px none rgb(0, 0, 0); border-bottom: 0px none rgb(0, 0, 0); border-radius: 0px; padding: 0px 45px 0px 13px; line-height: 17.234px; min-height: 18px; white-space: nowrap; color: rgb(0, 0, 0); font-family: Menlo, Monaco, Consolas, "Courier New", monospace; font-size: 14px;  }
+.S9 { border-left: 1px solid rgb(233, 233, 233); border-right: 1px solid rgb(233, 233, 233); border-top: 0px none rgb(0, 0, 0); border-bottom: 1px solid rgb(233, 233, 233); border-radius: 0px 0px 4px 4px; padding: 0px 45px 4px 13px; line-height: 17.234px; min-height: 18px; white-space: nowrap; color: rgb(0, 0, 0); font-family: Menlo, Monaco, Consolas, "Courier New", monospace; font-size: 14px;  }
+.S10 { border-left: 1px solid rgb(233, 233, 233); border-right: 1px solid rgb(233, 233, 233); border-top: 0px none rgb(0, 0, 0); border-bottom: 1px solid rgb(233, 233, 233); border-radius: 0px; padding: 0px 45px 4px 13px; line-height: 17.234px; min-height: 18px; white-space: nowrap; color: rgb(0, 0, 0); font-family: Menlo, Monaco, Consolas, "Courier New", monospace; font-size: 14px;  }
+.S11 { color: rgb(64, 64, 64); padding: 10px 0px 6px 17px; background: rgb(255, 255, 255) none repeat scroll 0% 0% / auto padding-box border-box; font-family: Menlo, Monaco, Consolas, "Courier New", monospace; font-size: 14px; overflow-x: hidden; line-height: 17.234px;  }
+.embeddedOutputsErrorElement {min-height: 18px; max-height: 250px; overflow: auto;}
+.embeddedOutputsErrorElement.inlineElement {}
+.embeddedOutputsErrorElement.rightPaneElement {}
+.embeddedOutputsWarningElement{min-height: 18px; max-height: 250px; overflow: auto;}
+.embeddedOutputsWarningElement.inlineElement {}
+.embeddedOutputsWarningElement.rightPaneElement {}
+.diagnosticMessage-wrapper {font-family: Menlo, Monaco, Consolas, "Courier New", monospace; font-size: 12px;}
+.diagnosticMessage-wrapper.diagnosticMessage-warningType {color: rgb(255,100,0);}
+.diagnosticMessage-wrapper.diagnosticMessage-warningType a {color: rgb(255,100,0); text-decoration: underline;}
+.diagnosticMessage-wrapper.diagnosticMessage-errorType {color: rgb(230,0,0);}
+.diagnosticMessage-wrapper.diagnosticMessage-errorType a {color: rgb(230,0,0); text-decoration: underline;}
+.diagnosticMessage-wrapper .diagnosticMessage-messagePart,.diagnosticMessage-wrapper .diagnosticMessage-causePart {white-space: pre-wrap;}
+.diagnosticMessage-wrapper .diagnosticMessage-stackPart {white-space: pre;}
+.embeddedOutputsTextElement,.embeddedOutputsVariableStringElement {white-space: pre; word-wrap: initial; min-height: 18px; max-height: 250px; overflow: auto;}
+.textElement,.rtcDataTipElement .textElement {padding-top: 3px;}
+.embeddedOutputsTextElement.inlineElement,.embeddedOutputsVariableStringElement.inlineElement {}
+.inlineElement .textElement {}
+.embeddedOutputsTextElement.rightPaneElement,.embeddedOutputsVariableStringElement.rightPaneElement {min-height: 16px;}
+.rightPaneElement .textElement {padding-top: 2px; padding-left: 9px;}
+.S12 { border-left: 1px solid rgb(233, 233, 233); border-right: 1px solid rgb(233, 233, 233); border-top: 1px solid rgb(233, 233, 233); border-bottom: 1px solid rgb(233, 233, 233); border-radius: 0px; padding: 6px 45px 4px 13px; line-height: 17.234px; min-height: 18px; white-space: nowrap; color: rgb(0, 0, 0); font-family: Menlo, Monaco, Consolas, "Courier New", monospace; font-size: 14px;  }
+.S13 { border-left: 1px solid rgb(233, 233, 233); border-right: 1px solid rgb(233, 233, 233); border-top: 1px solid rgb(233, 233, 233); border-bottom: 1px solid rgb(233, 233, 233); border-radius: 0px 0px 4px 4px; padding: 6px 45px 4px 13px; line-height: 17.234px; min-height: 18px; white-space: nowrap; color: rgb(0, 0, 0); font-family: Menlo, Monaco, Consolas, "Courier New", monospace; font-size: 14px;  }</style></head><body><div class = rtcContent><h1  class = 'S0'><span>Assessment of pellet retrieval performance</span></h1><h2  class = 'S1'><span style=' font-weight: bold;'>Pre- </span><span>vs </span><span style=' font-weight: bold;'>Post-Implant</span></h2><div  class = 'S2'><span>In this script, we use a reduced dataset for behavioral performance that does not break the pellet retrievals down in the same detail used for neurophysiological and other behavioral timing characterizations. Qualitatively, we saw that the rats were generally worse at retrieving pellets after a large object was put on their head. Using the retrieval success data that was recorded "online" (i.e. by the technician as she administered the behavioral task), we quantify the relative levels of pellet retrieval both before and after implant, without respect to recovery trends.</span></div><h3  class = 'S3'><span>Load data</span></h3><div class="CodeBlock"><div class="inlineWrapper"><div  class = 'S4'><span style="white-space: pre;"><span>T = readtable(defaults.files(</span><span style="color: rgb(170, 4, 249);">'behavior_data_file'</span><span>));</span></span></div></div></div><h2  class = 'S5'><span>Get table into correct format</span></h2><div  class = 'S2'><span>The data has some extra entries from a separate group that was not included in the end study (bilateral implants in CFA, but they used NeuroNexus 4x4 arrays so they were not used).</span></div><h4  class = 'S6'><span>Do not use rats from "M1-C" group</span></h4><div class="CodeBlock"><div class="inlineWrapper"><div  class = 'S7'><span style="white-space: pre;"><span>T(strcmpi(T.Group,</span><span style="color: rgb(170, 4, 249);">'M1-C'</span><span>),:) = [];</span></span></div></div><div class="inlineWrapper"><div  class = 'S8'><span style="white-space: pre;"><span>T.Group = categorical(T.Group);</span></span></div></div><div class="inlineWrapper"><div  class = 'S9'><span style="white-space: pre;"><span>T.Name = categorical(T.Name);</span></span></div></div></div><h4  class = 'S6'><span>Add categorical variable for "Pre" vs "Post" sessions</span></h4><div class="CodeBlock"><div class="inlineWrapper"><div  class = 'S4'><span style="white-space: pre;"><span>T.PrePost = categorical(double(T.Day &gt; 0),[0 1],{</span><span style="color: rgb(170, 4, 249);">'Pre'</span><span>,</span><span style="color: rgb(170, 4, 249);">'Post'</span><span>});</span></span></div></div></div><h4  class = 'S6'><span>Add numeric variable for Total number of trials (for Binomial GLME)</span></h4><div class="CodeBlock"><div class="inlineWrapper"><div  class = 'S4'><span style="white-space: pre;"><span>T.nTotal = round(T.nSuccess ./ T.pct);</span></span></div></div></div><h4  class = 'S6'><span>Create mask for Exclusions (days where no trials were performed)</span></h4><div  class = 'S2'><span>Also update </span><span style=' font-weight: bold; font-family: monospace;'>N</span><span>, the vector used to specify the total number of trials. It messes up </span><span style=' font-family: monospace;'>fitglme</span><span> if any values are </span><span style=' font-family: monospace;'>NaN</span><span>, so set those values to 1.</span></div><div class="CodeBlock"><div class="inlineWrapper"><div  class = 'S7'><span style="white-space: pre;"><span>Excluded = isnan(T.nTotal);</span></span></div></div><div class="inlineWrapper"><div  class = 'S8'><span style="white-space: pre;"><span>N = T.nTotal;</span></span></div></div><div class="inlineWrapper"><div  class = 'S9'><span style="white-space: pre;"><span>N(Excluded) = 1;</span></span></div></div></div><h2  class = 'S5'><span>Create Generalized Linear Mixed-Effects (GLME) Model</span></h2><div  class = 'S2'><span>Include an Intercept term, a Group*PrePost interaction (and main fixed effects), and random intercept for each animal (Name).</span></div><div  class = 'S2'><span>Fit the output as total number of successes using a Binomial Distribution and the total number of trials.</span></div><div class="CodeBlock"><div class="inlineWrapper"><div  class = 'S7'><span style="white-space: pre;"><span>prepost_glme = fitglme(T,</span><span style="color: rgb(170, 4, 249);">"nSuccess~1+PrePost*Group+(1|Name)"</span><span>,</span><span style="color: rgb(14, 0, 255);">...</span></span></div></div><div class="inlineWrapper"><div  class = 'S8'><span style="white-space: pre;"><span>   </span><span style="color: rgb(170, 4, 249);">"Exclude"</span><span>,Excluded,</span><span style="color: rgb(14, 0, 255);">...</span></span></div></div><div class="inlineWrapper"><div  class = 'S8'><span style="white-space: pre;"><span>   </span><span style="color: rgb(170, 4, 249);">"BinomialSize"</span><span>,N,</span><span style="color: rgb(14, 0, 255);">...</span></span></div></div><div class="inlineWrapper"><div  class = 'S8'><span style="white-space: pre;"><span>   </span><span style="color: rgb(170, 4, 249);">"Link"</span><span>,</span><span style="color: rgb(170, 4, 249);">"logit"</span><span>,</span><span style="color: rgb(14, 0, 255);">...</span></span></div></div><div class="inlineWrapper"><div  class = 'S8'><span style="white-space: pre;"><span>   </span><span style="color: rgb(170, 4, 249);">"Distribution"</span><span>,</span><span style="color: rgb(170, 4, 249);">"Binomial"</span><span>,</span><span style="color: rgb(14, 0, 255);">...</span></span></div></div><div class="inlineWrapper"><div  class = 'S8'><span style="white-space: pre;"><span>   </span><span style="color: rgb(170, 4, 249);">"FitMethod"</span><span>,</span><span style="color: rgb(170, 4, 249);">"Laplace"</span><span>,</span><span style="color: rgb(14, 0, 255);">...</span></span></div></div><div class="inlineWrapper"><div  class = 'S8'><span style="white-space: pre;"><span>   </span><span style="color: rgb(170, 4, 249);">"DummyVarCoding"</span><span>,</span><span style="color: rgb(170, 4, 249);">"effects"</span><span>,</span><span style="color: rgb(14, 0, 255);">...</span></span></div></div><div class="inlineWrapper"><div  class = 'S8'><span style="white-space: pre;"><span>   </span><span style="color: rgb(170, 4, 249);">"DispersionFlag"</span><span>,true);</span></span></div></div><div class="inlineWrapper outputs"><div  class = 'S10'><span style="white-space: pre;"><span>disp(prepost_glme);</span></span></div><div  class = 'S11'><div class="inlineElement eoOutputWrapper embeddedOutputsTextElement scrollableOutput" uid="AB7CB76D" data-scroll-top="302" data-scroll-left="0" data-testid="output_0" data-width="1197" data-height="563" data-hashorizontaloverflow="false" style="width: 1227px; max-height: 261px;"><div class="textElement"><strong>Generalized linear mixed-effects model fit by ML</strong>
+
+<strong>Model information:</strong>
+    Number of observations             223
+    Fixed effects coefficients           4
+    Random effects coefficients         10
+    Covariance parameters                1
+    Distribution                    Binomial
+    Link                            Logit 
+    FitMethod                       Laplace
+
+<strong>Formula:</strong>
+    nSuccess ~ 1 + Group*PrePost + (1 | Name)
+
+<strong>Model fit statistics:</strong>
+    AIC                BIC                 LogLikelihood        Deviance       
+    1429.4071085979    1446.44296745521    -709.703554298952    1419.4071085979
+
+<strong>Fixed effects coefficients (95% CIs):</strong>
+    Name                              Estimate              SE                    tStat                DF     pValue                  Lower             
+    {'(Intercept)'           }         0.949234887316214      0.10843451671673     8.75399195807694    219    5.62642824466142e-16     0.735526138059703
+    {'Group_ET-1'            }        -0.282020512378024      0.10843451671673    -2.60083708506549    219     0.00993321109986482    -0.495729261634534
+    {'PrePost_Pre'           }         0.401221412331987    0.0341687837803898     11.7423381209798    219    5.14964748812336e-25     0.333879681429094
+    {'Group_ET-1:PrePost_Pre'}         0.192326701300368    0.0341687837803898     5.62872540434842    219    5.52396515179824e-08     0.124984970397475
+
+
+    Upper              
+       1.16294363657272
+    -0.0683117631215143
+       0.46856314323488
+      0.259668432203261
+
+<strong>Random effects covariance parameters:</strong>
+Group: Name (10 Levels)
+    Name1                  Name2                  Type           Estimate         
+    {'(Intercept)'}        {'(Intercept)'}        {'std'}        0.318980908689946
+
+Group: Error
+    Name                        Estimate
+    {'sqrt(Dispersion)'}        1       </div></div></div></div><div class="inlineWrapper outputs"><div  class = 'S12'><span style="white-space: pre;"><span>disp(prepost_glme.Rsquared);</span></span></div><div  class = 'S11'><div class="inlineElement eoOutputWrapper embeddedOutputsTextElement" uid="AD10256F" data-testid="output_1" data-width="1197" data-height="31" data-hashorizontaloverflow="false" style="width: 1227px; max-height: 261px;"><div class="textElement">    Ordinary: 0.498720976618045
+    Adjusted: 0.491854140681306</div></div></div></div></div><h2  class = 'S5'><span>Report mean and 95% confidence intervals for observed values by category</span></h2><div class="CodeBlock"><div class="inlineWrapper"><div  class = 'S7'><span style="white-space: pre;"><span>tSub = T(~Excluded,:);</span></span></div></div><div class="inlineWrapper"><div  class = 'S8'><span style="white-space: pre;"><span>[Group,TID] = findgroups(tSub(:,{</span><span style="color: rgb(170, 4, 249);">'Group'</span><span>,</span><span style="color: rgb(170, 4, 249);">'PrePost'</span><span>}));</span></span></div></div><div class="inlineWrapper"><div  class = 'S8'><span style="white-space: pre;"><span>TID.Mean = splitapply(@nanmean,tSub.pct,Group); </span><span style="color: rgb(2, 128, 9);">% Return mean percent correct</span></span></div></div><div class="inlineWrapper"><div  class = 'S8'><span style="white-space: pre;"><span>TID.CB95 = splitapply(@analyze.stat.getCB95,tSub.pct,Group); </span><span style="color: rgb(2, 128, 9);">% Return upper and lower 95%-confidence bounds</span></span></div></div><div class="inlineWrapper"><div  class = 'S8'><span style="white-space: pre;"><span>TID.CB95 = cell2mat(TID.CB95);</span></span></div></div><div class="inlineWrapper outputs"><div  class = 'S10'><span style="white-space: pre;"><span>disp(TID);</span></span></div><div  class = 'S11'><div class="inlineElement eoOutputWrapper embeddedOutputsTextElement" uid="E1B6BA6E" data-scroll-top="null" data-scroll-left="null" data-testid="output_2" data-width="1197" data-height="101" data-hashorizontaloverflow="false" style="width: 1227px; max-height: 261px;"><div class="textElement">    <strong>Group</strong>    <strong>PrePost</strong>          <strong>Mean</strong>                     <strong>CB95</strong>           
+    <strong>_____</strong>    <strong>_______</strong>    <strong>_________________</strong>    <strong>_________________________</strong>
+
+    ET-1      Pre       0.772222222222222     0.7    0.866666666666667
+    ET-1      Post      0.532733708267427    0.04                 0.88
+    SHAM      Pre       0.806944444444444     0.7    0.883333333333333
+    SHAM      Post        0.7348019438841    0.52                 0.92</div></div></div></div></div><h2  class = 'S5'><span>Test for significant difference in performance of Intact rats specifically</span></h2><div class="CodeBlock"><div class="inlineWrapper"><div  class = 'S7'><span style="white-space: pre;"><span>iET1 = T.Group==</span><span style="color: rgb(170, 4, 249);">"ET-1"</span><span>;</span></span></div></div><div class="inlineWrapper"><div  class = 'S8'><span style="white-space: pre;"><span>tSub = T(iET1,:);</span></span></div></div><div class="inlineWrapper"><div  class = 'S8'><span style="white-space: pre;"><span>tSub.Group = string(tSub.Group);</span></span></div></div><div class="inlineWrapper"><div  class = 'S8'><span style="white-space: pre;"><span>tSub.Name = string(tSub.Name);</span></span></div></div><div class="inlineWrapper"><div  class = 'S8'><span style="white-space: pre;"><span>n = N(iET1);</span></span></div></div><div class="inlineWrapper"><div  class = 'S8'><span style="white-space: pre;"><span>exc = Excluded(iET1);</span></span></div></div><div class="inlineWrapper"><div  class = 'S8'><span style="white-space: pre;"><span>prepost_glme_Ischemia = fitglme(tSub,</span><span style="color: rgb(170, 4, 249);">"nSuccess~1+PrePost+(1|Name)"</span><span>,</span><span style="color: rgb(14, 0, 255);">...</span></span></div></div><div class="inlineWrapper"><div  class = 'S8'><span style="white-space: pre;"><span>   </span><span style="color: rgb(170, 4, 249);">"Exclude"</span><span>,exc,</span><span style="color: rgb(14, 0, 255);">...</span></span></div></div><div class="inlineWrapper"><div  class = 'S8'><span style="white-space: pre;"><span>   </span><span style="color: rgb(170, 4, 249);">"BinomialSize"</span><span>,n,</span><span style="color: rgb(14, 0, 255);">...</span></span></div></div><div class="inlineWrapper"><div  class = 'S8'><span style="white-space: pre;"><span>   </span><span style="color: rgb(170, 4, 249);">"Link"</span><span>,</span><span style="color: rgb(170, 4, 249);">"logit"</span><span>,</span><span style="color: rgb(14, 0, 255);">...</span></span></div></div><div class="inlineWrapper"><div  class = 'S8'><span style="white-space: pre;"><span>   </span><span style="color: rgb(170, 4, 249);">"Distribution"</span><span>,</span><span style="color: rgb(170, 4, 249);">"Binomial"</span><span>,</span><span style="color: rgb(14, 0, 255);">...</span></span></div></div><div class="inlineWrapper"><div  class = 'S8'><span style="white-space: pre;"><span>   </span><span style="color: rgb(170, 4, 249);">"FitMethod"</span><span>,</span><span style="color: rgb(170, 4, 249);">"Laplace"</span><span>,</span><span style="color: rgb(14, 0, 255);">...</span></span></div></div><div class="inlineWrapper"><div  class = 'S8'><span style="white-space: pre;"><span>   </span><span style="color: rgb(170, 4, 249);">"DummyVarCoding"</span><span>,</span><span style="color: rgb(170, 4, 249);">"effects"</span><span>,</span><span style="color: rgb(14, 0, 255);">...</span></span></div></div><div class="inlineWrapper"><div  class = 'S8'><span style="white-space: pre;"><span>   </span><span style="color: rgb(170, 4, 249);">"DispersionFlag"</span><span>,true);</span></span></div></div><div class="inlineWrapper outputs"><div  class = 'S10'><span style="white-space: pre;"><span>disp(prepost_glme_Ischemia);</span></span></div><div  class = 'S11'><div class="inlineElement eoOutputWrapper embeddedOutputsTextElement" uid="AB141860" data-scroll-top="null" data-scroll-left="null" data-testid="output_3" data-width="1197" data-height="437" data-hashorizontaloverflow="false" style="width: 1227px; max-height: 448px;"><div class="textElement"><strong>Generalized linear mixed-effects model fit by ML</strong>
+
+<strong>Model information:</strong>
+    Number of observations             129
+    Fixed effects coefficients           2
+    Random effects coefficients          6
+    Covariance parameters                1
+    Distribution                    Binomial
+    Link                            Logit 
+    FitMethod                       Laplace
+
+<strong>Formula:</strong>
+    nSuccess ~ 1 + PrePost + (1 | Name)
+
+<strong>Model fit statistics:</strong>
+    AIC                 BIC                 LogLikelihood        Deviance        
+    951.449127681202    960.028564894287    -472.724563840601    945.449127681202
+
+<strong>Fixed effects coefficients (95% CIs):</strong>
+    Name                   Estimate             SE                    tStat               DF     pValue                  Lower                Upper            
+    {'(Intercept)'}          0.6674085478391     0.166517891896624     4.0080290486348    127    0.000103720094689172    0.337899690476522    0.996917405201679
+    {'PrePost_Pre'}        0.595425433959527    0.0424380005699029    14.0304780141269    127    1.37870386188683e-27    0.511448289418073    0.679402578500982
+
+<strong>Random effects covariance parameters:</strong>
+Group: Name (6 Levels)
+    Name1                  Name2                  Type           Estimate       
+    {'(Intercept)'}        {'(Intercept)'}        {'std'}        0.3947628794273
+
+Group: Error
+    Name                        Estimate
+    {'sqrt(Dispersion)'}        1       </div></div></div></div><div class="inlineWrapper outputs"><div  class = 'S12'><span style="white-space: pre;"><span>disp(prepost_glme_Ischemia.Rsquared);</span></span></div><div  class = 'S11'><div class="inlineElement eoOutputWrapper embeddedOutputsTextElement" uid="295D0E38" data-testid="output_4" data-width="1197" data-height="31" data-hashorizontaloverflow="false" style="width: 1227px; max-height: 261px;"><div class="textElement">    Ordinary: 0.476193675513059
+    Adjusted: 0.47206921626513</div></div></div></div><div class="inlineWrapper"><div  class = 'S13'></div></div></div><div class="CodeBlock"><div class="inlineWrapper"><div  class = 'S7'><span style="white-space: pre;"><span>iSHAM = T.Group==</span><span style="color: rgb(170, 4, 249);">"SHAM"</span><span>;</span></span></div></div><div class="inlineWrapper"><div  class = 'S8'><span style="white-space: pre;"><span>tSub = T(iSHAM,:);</span></span></div></div><div class="inlineWrapper"><div  class = 'S8'><span style="white-space: pre;"><span>tSub.Name = string(tSub.Name);</span></span></div></div><div class="inlineWrapper"><div  class = 'S8'><span style="white-space: pre;"><span>tSub.Group = string(tSub.Group);</span></span></div></div><div class="inlineWrapper"><div  class = 'S8'><span style="white-space: pre;"><span>n = N(iSHAM);</span></span></div></div><div class="inlineWrapper"><div  class = 'S8'><span style="white-space: pre;"><span>exc = Excluded(iSHAM);</span></span></div></div><div class="inlineWrapper"><div  class = 'S8'><span style="white-space: pre;"><span class="variableHighlight">prepost_glme_Intact</span><span>= fitglme(tSub,</span><span style="color: rgb(170, 4, 249);">"nSuccess~1+PrePost+(1|Name)"</span><span>,</span><span style="color: rgb(14, 0, 255);">...</span></span></div></div><div class="inlineWrapper"><div  class = 'S8'><span style="white-space: pre;"><span>   </span><span style="color: rgb(170, 4, 249);">"Exclude"</span><span>,exc,</span><span style="color: rgb(14, 0, 255);">...</span></span></div></div><div class="inlineWrapper"><div  class = 'S8'><span style="white-space: pre;"><span>   </span><span style="color: rgb(170, 4, 249);">"BinomialSize"</span><span>,n,</span><span style="color: rgb(14, 0, 255);">...</span></span></div></div><div class="inlineWrapper"><div  class = 'S8'><span style="white-space: pre;"><span>   </span><span style="color: rgb(170, 4, 249);">"Link"</span><span>,</span><span style="color: rgb(170, 4, 249);">"logit"</span><span>,</span><span style="color: rgb(14, 0, 255);">...</span></span></div></div><div class="inlineWrapper"><div  class = 'S8'><span style="white-space: pre;"><span>   </span><span style="color: rgb(170, 4, 249);">"Distribution"</span><span>,</span><span style="color: rgb(170, 4, 249);">"Binomial"</span><span>,</span><span style="color: rgb(14, 0, 255);">...</span></span></div></div><div class="inlineWrapper"><div  class = 'S8'><span style="white-space: pre;"><span>   </span><span style="color: rgb(170, 4, 249);">"FitMethod"</span><span>,</span><span style="color: rgb(170, 4, 249);">"Laplace"</span><span>,</span><span style="color: rgb(14, 0, 255);">...</span></span></div></div><div class="inlineWrapper"><div  class = 'S8'><span style="white-space: pre;"><span>   </span><span style="color: rgb(170, 4, 249);">"DummyVarCoding"</span><span>,</span><span style="color: rgb(170, 4, 249);">"effects"</span><span>,</span><span style="color: rgb(14, 0, 255);">...</span></span></div></div><div class="inlineWrapper"><div  class = 'S8'><span style="white-space: pre;"><span>   </span><span style="color: rgb(170, 4, 249);">"DispersionFlag"</span><span>,true);</span></span></div></div><div class="inlineWrapper outputs"><div  class = 'S10'><span style="white-space: pre;"><span>disp(</span><span class="variableHighlight">prepost_glme_Intact</span><span>);</span></span></div><div  class = 'S11'><div class="inlineElement eoOutputWrapper embeddedOutputsTextElement" uid="28770050" data-scroll-top="null" data-scroll-left="null" data-testid="output_5" data-width="1197" data-height="437" data-hashorizontaloverflow="false" style="width: 1227px; max-height: 448px;"><div class="textElement"><strong>Generalized linear mixed-effects model fit by ML</strong>
+
+<strong>Model information:</strong>
+    Number of observations              94
+    Fixed effects coefficients           2
+    Random effects coefficients          4
+    Covariance parameters                1
+    Distribution                    Binomial
+    Link                            Logit 
+    FitMethod                       Laplace
+
+<strong>Formula:</strong>
+    nSuccess ~ 1 + PrePost + (1 | Name)
+
+<strong>Model fit statistics:</strong>
+    AIC                 BIC                 LogLikelihood        Deviance        
+    482.237357659919    489.867242006729    -238.118678829959    476.237357659919
+
+<strong>Fixed effects coefficients (95% CIs):</strong>
+    Name                   Estimate             SE                    tStat               DF    pValue                  Lower                 Upper            
+    {'(Intercept)'}         1.22421701678796    0.0534811739227545    22.8906160241763    92    9.27578236813384e-40       1.1179987890455     1.33043524453043
+    {'PrePost_Pre'}        0.206059806933255    0.0534811739227513    3.85294098500698    92    0.000215736214775868    0.0998415791907954    0.312278034675715
+
+<strong>Random effects covariance parameters:</strong>
+Group: Name (4 Levels)
+    Name1                  Name2                  Type           Estimate            
+    {'(Intercept)'}        {'(Intercept)'}        {'std'}        3.69298550106962e-08
+
+Group: Error
+    Name                        Estimate
+    {'sqrt(Dispersion)'}        1       </div></div></div></div><div class="inlineWrapper outputs"><div  class = 'S12'><span style="white-space: pre;"><span>disp(</span><span class="variableHighlight">prepost_glme_Intact</span><span>.Rsquared);</span></span></div><div  class = 'S11'><div class="inlineElement eoOutputWrapper embeddedOutputsTextElement" uid="5B7C6CAC" data-testid="output_6" data-width="1197" data-height="31" data-hashorizontaloverflow="false" style="width: 1227px; max-height: 261px;"><div class="textElement">    Ordinary: 0.100959714563775
+    Adjusted: 0.0911875375481638</div></div></div></div></div></div>
+<br>
+<!-- 
+##### SOURCE BEGIN #####
+%% Assessment of pellet retrieval performance
+%% *Pre-* vs *Post-Implant*
+% In this script, we use a reduced dataset for behavioral performance that does 
+% not break the pellet retrievals down in the same detail used for neurophysiological 
+% and other behavioral timing characterizations. Qualitatively, we saw that the 
+% rats were generally worse at retrieving pellets after a large object was put 
+% on their head. Using the retrieval success data that was recorded "online" (i.e. 
+% by the technician as she administered the behavioral task), we quantify the 
+% relative levels of pellet retrieval both before and after implant, without respect 
+% to recovery trends.
+% Load data
+
+T = readtable(defaults.files('behavior_data_file'));
+%% Get table into correct format
+% The data has some extra entries from a separate group that was not included 
+% in the end study (bilateral implants in CFA, but they used NeuroNexus 4x4 arrays 
+% so they were not used).
+% Do not use rats from "M1-C" group
+
+T(strcmpi(T.Group,'M1-C'),:) = [];
+T.Group = categorical(T.Group);
+T.Name = categorical(T.Name);
+% Add categorical variable for "Pre" vs "Post" sessions
+
+T.PrePost = categorical(double(T.Day > 0),[0 1],{'Pre','Post'});
+% Add numeric variable for Total number of trials (for Binomial GLME)
+
+T.nTotal = round(T.nSuccess ./ T.pct);
+% Create mask for Exclusions (days where no trials were performed)
+% Also update |*N*|, the vector used to specify the total number of trials. 
+% It messes up |fitglme| if any values are |NaN|, so set those values to 1.
+
+Excluded = isnan(T.nTotal);
+N = T.nTotal;
+N(Excluded) = 1;
+%% Create Generalized Linear Mixed-Effects (GLME) Model
+% Include an Intercept term, a Group*PrePost interaction (and main fixed effects), 
+% and random intercept for each animal (Name).
+% 
+% Fit the output as total number of successes using a Binomial Distribution 
+% and the total number of trials.
+
+prepost_glme = fitglme(T,"nSuccess~1+PrePost*Group+(1|Name)",...
+   "Exclude",Excluded,...
+   "BinomialSize",N,...
+   "Link","logit",...
+   "Distribution","Binomial",...
+   "FitMethod","Laplace",...
+   "DummyVarCoding","effects",...
+   "DispersionFlag",true);
+disp(prepost_glme);
+disp(prepost_glme.Rsquared);
+%% Report mean and 95% confidence intervals for observed values by category
+
+tSub = T(~Excluded,:);
+[Group,TID] = findgroups(tSub(:,{'Group','PrePost'}));
+TID.Mean = splitapply(@nanmean,tSub.pct,Group); % Return mean percent correct
+TID.CB95 = splitapply(@analyze.stat.getCB95,tSub.pct,Group); % Return upper and lower 95%-confidence bounds
+TID.CB95 = cell2mat(TID.CB95);
+disp(TID);
+%% Test for significant difference in performance of Intact rats specifically
+
+iET1 = T.Group=="ET-1";
+tSub = T(iET1,:);
+tSub.Group = string(tSub.Group);
+tSub.Name = string(tSub.Name);
+n = N(iET1);
+exc = Excluded(iET1);
+prepost_glme_Ischemia = fitglme(tSub,"nSuccess~1+PrePost+(1|Name)",...
+   "Exclude",exc,...
+   "BinomialSize",n,...
+   "Link","logit",...
+   "Distribution","Binomial",...
+   "FitMethod","Laplace",...
+   "DummyVarCoding","effects",...
+   "DispersionFlag",true);
+disp(prepost_glme_Ischemia);
+disp(prepost_glme_Ischemia.Rsquared);
+
+%%
+iSHAM = T.Group=="SHAM";
+tSub = T(iSHAM,:);
+tSub.Name = string(tSub.Name);
+tSub.Group = string(tSub.Group);
+n = N(iSHAM);
+exc = Excluded(iSHAM);
+prepost_glme_Intact= fitglme(tSub,"nSuccess~1+PrePost+(1|Name)",...
+   "Exclude",exc,...
+   "BinomialSize",n,...
+   "Link","logit",...
+   "Distribution","Binomial",...
+   "FitMethod","Laplace",...
+   "DummyVarCoding","effects",...
+   "DispersionFlag",true);
+disp(prepost_glme_Intact);
+disp(prepost_glme_Intact.Rsquared);
+##### SOURCE END #####
+--></body></html>
