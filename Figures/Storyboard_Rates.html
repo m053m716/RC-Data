@@ -3,21 +3,25 @@
 
 <head>
     <title>Storyboard: Figures</title>
-    <meta name="viewport"; content="width=device-width, initial-scale=1">
-    <meta name="description"; content="Electrode placement and recording schedule">
-    <meta name="keywords"; content="RC, Rat Reaching, Rehabilitation, Preclinical Studies, ICMS, Motor Cortex, Storyboard, All Figures">
-    <meta name="author"; content="Max Murphy">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Electrode placement and recording schedule">
+    <meta name="keywords" content="RC, Rat Reaching, Rehabilitation, Preclinical Studies, ICMS, Motor Cortex, Storyboard, All Figures">
+    <meta name="author" content="Max Murphy">
     <!-- Favicon -->
     <link rel="icon"; 
           href="https://media.githubusercontent.com/media/m053m716/RC-Data/master/images/Rat_Skull_Icon.png";
           type="image/png">
-    <!-- Custom Style css -->
-    <link rel="stylesheet"; 
-          href="../styles/rc-fonts.css";
-          type="text/css">
-    <link rel="stylesheet";
-          href="../styles/rc-fonts.css";
-          type="text/css">
+    <!-- Styles -->
+    <style>
+        body {
+            height:95%;
+            width:95%;
+            padding:5px;
+            max-width:1500px;
+            max-height:900px;
+        }
+    </style>
+    
     <!-- jQuery js -->
     <script src="../sources/jquery/dist/jquery.slim.min.js"; 
             type="text/javascript">
@@ -27,25 +31,32 @@
             src="https://public.tableau.com/javascripts/api/tableau-2.min.js">
     </script>
     <script type="text/javascript">
-        function initViz() {
-            var containerDiv = document.getElementById("storyboard_rates"),
+        function initViz(containerDiv, h, w) {
+            containerDiv,
             url = "https://public.tableau.com/views/RC-Project/Figures",
             options = {
-                height: 900,
-                width: 1400,
+                height: h,
+                width: w,
                 hideTabs: true
             };
-
             // Create a viz object and embed it in the container div.
             var viz = new tableau.Viz(containerDiv, url, options); 
         }
-        $(document).ready(function(){
-            initViz();
+        $(document).ready(function(){  
+            var containerDiv = document.getElementById("storyboard_rates");
+            $(containerDiv).ready(function()
+                {
+                    initViz(containerDiv,containerDiv.clientHeight,containerDiv.clientWidth);
+                    containerDiv.parentElement.style.height = containerDiv.clientHeight;
+                    containerDiv.parentElement.style.width = containerDiv.clientWidth;
+                    containerDiv.parentElement.style.padding = 5;
+                }
+            )
         })
     </script>
 </head>
 
 <body>
-    <div id="storyboard_rates";style="height:750px;width:1200px;overflow:scroll"></div>    
+    <div id="storyboard_rates" style="height:900px; width:1500px; overflow:hidden"></div>    
 </body>
 </html>
