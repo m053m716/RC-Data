@@ -14,11 +14,12 @@
     <!-- Styles -->
     <style>
         body {
-            height:95%;
-            width:95%;
+            height:inherit;
+            width:inherit;
             padding:5px;
             max-width:1500px;
             max-height:900px;
+            overflow:visible;
         }
     </style>
     
@@ -44,12 +45,13 @@
         }
         $(document).ready(function(){  
             var containerDiv = document.getElementById("storyboard_rates");
-            $(containerDiv).ready(function()
-                {
+            $(containerDiv).ready(function() {
                     initViz(containerDiv,containerDiv.clientHeight,containerDiv.clientWidth);
-                    containerDiv.parentElement.style.height = containerDiv.clientHeight;
-                    containerDiv.parentElement.style.width = containerDiv.clientWidth;
-                    containerDiv.parentElement.style.padding = 5;
+                    let obj = $(containerDiv).children;
+                    if (!(jQuery.isEmptyObject(obj))) {
+                        obj[0].style.height = containerDiv.clientHeight;
+                        obj[0].style.width = containerDiv.clientWidth;
+                    }
                 }
             )
         })

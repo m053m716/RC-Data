@@ -25,7 +25,7 @@
           type="text/css";>
     
     <!-- START: javascript (for Bootstrap layout elements) -->
-    <script src="sources/jquery/dist/jquery.slim.min.js"; 
+    <script src="sources/jquery/dist/jquery.min.js"; 
             type="text/javascript";>
     </script>
     <script src="sources/bootstrap/dist/js/bootstrap.min.js";
@@ -35,11 +35,60 @@
     
     <!-- START: Custom javascript for events -->
     <script type="text/javascript">
-        document.getElementById("myBtn").addEventListener("click", displayDate);
+//        var x = document.getElementsByClassName("dropdown-item");
 
-        function displayDate() {
-          document.getElementById("demo").innerHTML = Date();
+//        function myFunction(obj) {
+//            document.getElementById('some_frame_id').contentWindow.location.reload();
+//        }
+//        for (let i = 0; i < x.length; i++){
+//        let curObj = x[i];
+//        curObj.addEventListener("click",function() 
+//            {
+//                myFunction(curObj);
+//            }
+//          )
+//        }  
+        function initViz(containerDiv, h, w) {
+            containerDiv,
+            url = "https://public.tableau.com/views/RC-Project/Figures",
+            options = {
+                height: h,
+                width: w,
+                hideTabs: true
+            };
+            // Create a viz object and embed it in the container div.
+            var viz = new tableau.Viz(containerDiv, url, options); 
         }
+        
+        $(document).ready(function(){  
+            $("#dropdown_item_overview").click(function() {
+                $('#test_frame').ready(function() {
+                    $('#test_frame').load('https://m053m716.github.io/RC-Data/Figures/Storyboard_Rates.html #storyboard_rates');
+                });
+                
+//                $("#overview_iframe").src += '';
+//                var obj = document.querySelector("#storyboard_rates > iframe");
+//                obj.setAttribute("height", $("#overview_iframe").clientHeight);
+//                obj.setAttribute("width", $("#overview_iframe").clientWidth);
+//                $("#overview_iframe").src += '';
+                
+//                $( "iframe[src*='https://public.tableau.com/views/RC-Project']").ready(function(){
+//                    var obj = $( "iframe[src*='https://public.tableau.com/views/RC-Project']");
+//                    obj.css("height",$("#overview_iframe").clientHeight);
+//                    obj.css("width",$("overview_iframe").clientWidth);
+//                });   
+                
+//                var mainFrame = document.getElementById("overview_iframe");
+//                var thisFrame = mainFrame.querySelector("iframe");
+//                while (thisFrame === null || thisFrame === undefined) {
+//                    thisFrame = mainFrame.querySelector("iframe");
+//                }
+//                       
+//                thisFrame.setAttribute("height", $("#overview_iframe").clientHeight);
+//                thisFrame.setAttribute("width", $("#overview_iframe").clientWidth);
+//                mainFrame.setAttribute("src",obj.getAttribute("src"));
+            });    
+        });
     </script>
     <!-- END: Custom javascript for events -->
 </head>
@@ -90,18 +139,18 @@
             </li>
         </ul> 
         <!-- START: Collapsible tab links -->
-        <div id="collapsible_menu"; class="collapse">
+        <div id="collapsible_menu" class="collapse">
             <ul class="nav nav-pills">
-                <li class="active"; role="presentation">
+                <li class="active" role="presentation">
                     <a data-toggle="pill"; data-target="#abstract">Abstract</a>
                 </li>
-                <li class="dropdown"; role="presentation">
-                    <a class="dropdown-toggle"; data-toggle="dropdown"; href="#"; role="button"; 
-                       aria-haspopup="true"; aria-expanded="false"; id="data_dropdown_button">Data</a>
-                    <ul class="dropdown-menu"; id="data_dropdown"; aria-labelledby="data_dropdown_button">
-                        <li><a class="dropdown-item"; data-toggle="pill"; data-target="#data_overview">Overview</a></li>
-                        <li><a class="dropdown-item"; data-toggle="pill"; data-target="#data_results">Results</a></li>
-                        <li><a class="dropdown-item"; data-toggle="pill"; data-target="#data_figures">Figures</a></li>
+                <li class="dropdown" role="presentation">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" 
+                       aria-haspopup="true" aria-expanded="false" id="data_dropdown_button">Data</a>
+                    <ul class="dropdown-menu" id="data_dropdown" aria-labelledby="data_dropdown_button">
+                        <li><a id="dropdown_item_overview" class="dropdown-item" data-toggle="pill" data-target="#data_overview">Overview</a></li>
+                        <li><a class="dropdown-item" data-toggle="pill" data-target="#data_results">Results</a></li>
+                        <li><a class="dropdown-item" data-toggle="pill" data-target="#data_figures">Figures</a></li>
                     </ul>
                 </li>
                 <li role="presentation">
@@ -117,9 +166,9 @@
     <!-- END: Navigation bar -->
     
     <!-- START: Main contents -->
-    <div id="main"; class="tab-content">           
+    <div id="main" class="tab-content">           
         <!-- Abstract -->
-        <div id="abstract"; class="tab-pane fade active in">
+        <div id="abstract" class="tab-pane fade active in">
             <h3>Abstract</h3>
             <h4>Background</h4>
                 <p class="abstract">
@@ -141,12 +190,19 @@
                 </p>
         </div>
         <!-- Data sub-tab: Overview -->
-        <div id="data_overview"; class="tab-pane fade"; style="height:inherit">
+        <div id="data_overview" class="tab-pane fade" style="height:1000px; overflow:visible">
             <h3>Overview</h3>
-            <iframe class="embedded"; src="Figures/Storyboard_Rates.html"></iframe>
+            <!-- iframe id="overview_iframe" class="embedded" src="Figures/Storyboard_Rates.html#storyboard_rates"></iframe -->
+            <div class='tableauPlaceholder' id='viz1606359856458' style='position: relative'><noscript><a href='#'><img alt=' ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;RC&#47;RC-Project&#47;Figures&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='' /><param name='name' value='RC-Project&#47;Figures' /><param name='tabs' value='no' /><param name='toolbar' value='no' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;RC&#47;RC-Project&#47;Figures&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='language' value='en' /></object></div>                
+            <script type='text/javascript'>                    
+                var divElement = document.getElementById('viz1606359856458');                    
+                var vizElement = divElement.getElementsByTagName('object')[0];                   vizElement.style.width='1400px';vizElement.style.height='900px';                    
+                var scriptElement = document.createElement('script');                    
+                scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                   vizElement.parentNode.insertBefore(scriptElement, vizElement);                
+            </script>
         </div>
         <!-- Data sub-tab: Results -->
-        <div id="data_results"; class="tab-pane fade">
+        <div id="data_results" class="tab-pane fade">
             <h3>Results</h3>
             <div class="panel-group"; id="results_accordion">
                 <!-- Results: Panel 0 Container (Reach Duration) -->
@@ -253,7 +309,7 @@
             </div>
         </div>
         <!-- Data sub-tab: Figures -->
-        <div id="data_figures"; class="tab-pane fade">
+        <div id="data_figures" class="tab-pane fade">
             <h3>Figures</h3>
             <iframe class="embedded"; 
                     src="https://docs.google.com/presentation/d/e/2PACX-1vRG0bR5sXSNRTUukr9qk9VqIQRkQZp4vQxpKdp_N5yDm3GYltjWh6lpC86kAzrr82ZAt2gzGlireP3H/embed?start=false&loop=false&delayms=15000";
@@ -261,7 +317,7 @@
             </iframe>
         </div>
         <!-- Discussion -->
-        <div id="discussion"; class="tab-pane fade">
+        <div id="discussion" class="tab-pane fade">
             <div id="discussion_accordion"; class="panel-group"; style="vertical-align:top;align-self:flex-start;align-content:flex-start">
                 <h3>Discussion</h3>
                 <!-- Discussion-Point: 1 Container -->
@@ -306,7 +362,7 @@
             </div> 
         </div>
         <!-- Methods -->
-        <div id="methods"; class="tab-pane fade">
+        <div id="methods" class="tab-pane fade">
 
             <h3>Methods</h3>
             <!-- Methods: Tabbed -->
